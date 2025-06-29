@@ -9,13 +9,13 @@
         </div>
 
         <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
+        <div class="top_nav" style=>
+          <div class="nav_menu" >
             <nav>
               <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                <a ><i class="fa fa-bars"></i></a>
               </div>
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right" style="margin-right: 0; margin-left: auto;">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset(Auth::user()->picture) }}" alt="">{{ Auth::user()->name }}

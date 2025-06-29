@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'E-Learning | HOME')
+@section('title', 'KaleidoLearn | Dashboard')
 @section('content')
         <!-- page content -->
 <div class="right_col" role="main">
@@ -18,36 +18,39 @@
 
     @endif
     <div class="row top_tiles">
-
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="tile-stats">
-                <div class="icon"><i class="fa fa-users" aria-hidden="true"></i></div>
-                <div class="count">{{ $totalTeachers or 0 }}</div>
-                <h3>Teachers</h3>
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12" >
+            <div class="tile-stats"  style="background:rgb(243, 255, 240); border: 3px solid rgb(218, 233, 214);">
+                <div class="icon"><i class="fas fa-chalkboard-teacher" style="color: green;"></i></i></div>
+                <div class="count" style="color: green;">{{ $totalTeachers or 0 }}</div>
+                <h3 style="color: green;">Teachers</h3>
+                <img src="static\assets\images\green-overlay.svg" alt="Teachers Image" class="tile-image">
             </div>
         </div>
 
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="tile-stats">
-                <div class="icon"><i class="fa fa-users" aria-hidden="true"></i></div>
-                <div class="count">{{ $totalStudents or 0 }}</div>
-                <h3>Students</h3>
+            <div class="tile-stats" style="background:rgb(255, 240, 246); border: 3px solid rgb(252, 208, 226);">
+                <div class="icon"><i class="fa fa-users"  style="color: #f5a0c2;"></i></div>
+                <div class="count" style="color: rgb(246, 142, 184)">{{ $totalStudents or 0 }}</div>
+                <h3 style="color:rgb(246, 142, 184);">Students</h3>
+                <img src="static\assets\images\pink-overlay.svg" alt="Teachers Image" class="tile-image">
             </div>
         </div>
 
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="tile-stats">
-                <div class="icon"><i class="fa fa-book" aria-hidden="true"></i></div>
-                <div class="count">{{ $totalCourses or 0 }}</div>
-                <h3>Courses</h3>
+            <div class="tile-stats" style="background:rgb(243, 240, 255); border: 3px solid rgb(192, 210, 227);">
+                <div class="icon"><i class="fa fa-book"  style="color: #2172b9;"></i></div>
+                <div class="count" style="color:rgb(14, 82, 141)">{{ $totalCourses or 0 }}</div>
+                <h3 style="color: rgb(14, 82, 141)">Courses</h3>
+                <img src="static\assets\images\blue-overlay.svg" alt="Blue Image" class="tile-image">
             </div>
         </div>
 
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="tile-stats">
-                <div class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
-                <div class="count">{{ $totalCertified or 0}}</div>
-                <h3>Certified Students</h3>
+            <div class="tile-stats" style="background:rgb(254, 255, 240); border: 3px solid rgb(254, 236, 193);">
+                <div class="icon"><i class="fa fa-graduation-cap"  style="color: #f9c130;"></i></div>
+                <div class="count" style="color: #f9c130;">{{ $totalCertified or 0}}</div>
+                <h3 style="color: #f9c130;">Certified Students</h3>
+                <img src="static\assets\images\yellow-overlay.svg" alt="Pink Image" class="tile-image">
             </div>
         </div>
 
@@ -58,7 +61,7 @@
 
                     <div class="row x_title">
                         <div class="col-md-6">
-                            <h3>{{ date('F Y') }} Teacher/Student Activities</h3>
+                            <h3>{{ date('F Y') }} Performance</h3>
                         </div>
                     </div>
 
@@ -67,7 +70,7 @@
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                         <div class="x_title">
-                            <h2>Top 4 Teacher Rank</h2>
+                            <h2>Best Performing Teachers</h2>
                             <div class="clearfix"></div>
                         </div>
 

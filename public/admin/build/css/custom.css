@@ -144,7 +144,7 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #2A3F54
+    background:#2172b9;
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -680,8 +680,7 @@ a:focus {
 }
 .top_nav .navbar-right {
     margin: 0;
-    width: 70%;
-    float: right
+    float: right;
 }
 .top_nav .navbar-right li {
     display: inline-block;
@@ -1390,7 +1389,7 @@ table.display thead td:active {
     clear: both
 }
 .dataTables_scrollBody {
-    *margin-top: -1px;
+    margin-top: -1px;
     -webkit-overflow-scrolling: touch
 }
 .top .dataTables_info {
@@ -1884,7 +1883,6 @@ h4.graph_title {
 .tile-stats .icon {
     width: 20px;
     height: 20px;
-    color: #BAB8B8;
     position: absolute;
     right: 53px;
     top: 22px;
@@ -1910,9 +1908,6 @@ h4.graph_title {
     margin-left: 10px;
     z-index: 5;
     padding: 0
-}
-.tile-stats h3 {
-    color: #BAB8B8
 }
 .tile-stats p {
     margin-top: 5px;

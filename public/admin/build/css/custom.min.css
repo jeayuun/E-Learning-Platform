@@ -185,7 +185,7 @@ a:hover {
 }
 
 .left_col {
-    background: #2A3F54
+    background: #2172b9;
 }
 
 .nav-sm .container.body .col-md-3.left_col {
@@ -322,7 +322,6 @@ table.tile_info td p {
     font-size: 11px;
     margin-bottom: 0;
     margin-top: 0;
-    text-shadow: 1px 1px #000
 }
 
 .menu_section>ul {
@@ -821,13 +820,11 @@ a:visited {
 
 .top_nav .navbar-right {
     margin: 0;
-    width: 70%;
     float: right
 }
 
 .top_nav .navbar-right li {
     display: inline-block;
-    float: right;
     position: static
 }
 
@@ -948,15 +945,6 @@ a:visited {
     padding: 13px 15px 12px
 }
 
-.nav.side-menu>li.active,
-.nav.side-menu>li.current-page {
-    border-right: 5px solid #1ABB9C
-}
-
-.nav li.current-page {
-    background: rgba(255, 255, 255, .05)
-}
-
 .nav li li li.current-page {
     background: 0 0
 }
@@ -969,9 +957,9 @@ a:visited {
 }
 
 .nav.side-menu>li.active>a {
-    text-shadow: rgba(0, 0, 0, .25) 0 -1px 0;
-    background: linear-gradient(#334556, #2C4257), #2A3F54;
-    box-shadow: rgba(0, 0, 0, .25) 0 1px 0, inset rgba(255, 255, 255, .16) 0 1px 0
+    text-shadow: rgba(195, 195, 195, 0.25) 0 -1px 0;
+    background: #478cc8;
+    box-shadow: rgba(188, 188, 188, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.392) 0 1px 0
 }
 
 .navbar-brand,
@@ -1271,7 +1259,6 @@ h2 {
     border: 1px solid #E6E9ED;
     -webkit-column-break-inside: avoid;
     -moz-column-break-inside: avoid;
-    column-break-inside: avoid;
     opacity: 1;
     transition: all .2s ease
 }
@@ -1703,8 +1690,6 @@ td.details {
 .paging_full_numbers a.paginate_active,
 .paging_full_numbers a.paginate_button {
     border: 1px solid #aaa;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     padding: 2px 5px;
     margin: 0 3px;
     cursor: pointer
@@ -1821,7 +1806,6 @@ ul.quick-list li {
     background: #fff;
     margin-top: 0;
     border: 1px solid #D9DEE4;
-    -webkit-box-shadow: none;
     right: 0;
     left: auto;
     width: 220px
@@ -1916,7 +1900,6 @@ ul.quick-list li i {
     border: 1px solid #abd9ea;
     border-radius: 5px;
     text-align: center;
-    float: right;
     padding: 2px;
     margin-top: 10px
 }
@@ -1983,7 +1966,7 @@ span.right {
     padding: 5px 0 0;
     position: fixed;
     width: 230px;
-    background: #2A3F54;
+    background: #2172b9;
     z-index: 999
 }
 
@@ -1994,7 +1977,7 @@ span.right {
     font-size: 17px;
     display: block;
     float: left;
-    background: #172D44;
+    background: #2172b9;
     cursor: pointer
 }
 
@@ -2194,13 +2177,11 @@ h4.graph_title {
     position: relative;
     display: block;
     margin-bottom: 12px;
-    border: 1px solid #E4E4E4;
+    border: 1px solid #b3b3b3;
     -webkit-border-radius: 5px;
     overflow: hidden;
     padding-bottom: 5px;
-    -webkit-background-clip: padding-box;
     -moz-border-radius: 5px;
-    -moz-background-clip: padding;
     border-radius: 5px;
     background: #FFF;
     transition: all .3s ease-in-out
@@ -2210,7 +2191,6 @@ h4.graph_title {
     animation-name: tansformAnimation;
     animation-duration: .5s;
     animation-iteration-count: 1;
-    color: rgba(58, 58, 58, .41);
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     -webkit-animation-name: tansformAnimation;
@@ -2228,7 +2208,6 @@ h4.graph_title {
 .tile-stats .icon {
     width: 20px;
     height: 20px;
-    color: #BAB8B8;
     position: absolute;
     right: 53px;
     top: 22px;
@@ -2256,10 +2235,6 @@ h4.graph_title {
     margin: 0 0 0 10px;
     z-index: 5;
     padding: 0
-}
-
-.tile-stats h3 {
-    color: #BAB8B8
 }
 
 .tile-stats p {
@@ -2651,8 +2626,6 @@ textarea.parsley-error {
     box-shadow: 0 0 4px -2px #CE5454;
     position: relative;
     left: 0;
-    -moz-animation: .7s 1 shake linear;
-    -webkit-animation: .7s 1 shake linear
 }
 
 .item input,
@@ -2920,8 +2893,6 @@ textarea:focus {
 }
 
 span.tag {
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
     display: block;
     float: left;
     padding: 5px 9px;
@@ -3423,7 +3394,6 @@ img.avatar,
 ul.messages li img.avatar {
     height: 32px;
     width: 32px;
-    float: left;
     display: inline-block;
     border-radius: 2px;
     padding: 2px;

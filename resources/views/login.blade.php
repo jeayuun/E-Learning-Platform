@@ -1875,8 +1875,7 @@
                                     Create Account
                                 </h2>
                                 <div class="content mx-auto mt-[24px] md:mt-[40px] lg:max-w-[690px]">
-                                    <div class="content [&amp;_input:focus]:ring-0 [&amp;_select:focus]:ring-0 [&amp;_textarea]:ring-0"
-                                        data-caret="https://iamlearningbydesign.sg/wp-content/themes/learning-by-design/frontend/static/assets/dropdown-caret.svg ">
+                                    <div class="content [&amp;_input:focus]:ring-0 [&amp;_select:focus]:ring-0 [&amp;_textarea]:ring-0">
                                         <div class="wpcf7 no-js" data-wpcf7-id="91" dir="ltr" id="wpcf7-f91-p982-o1"
                                             lang="en-US">
                                             <div class="screen-reader-response">
@@ -1926,10 +1925,10 @@
                                                 </div>
                                                 <div class="input-container">
                                                     <div class="input-wrapper">
-                                                        <span class="wpcf7-form-control-wrap" data-name="email">
+                                                        <span data-name="email">
                                                             <input aria-invalid="false" aria-required="true"
                                                                 class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
-                                                                maxlength="400" nname="password" required="" placeholder="Password*"
+                                                                maxlength="400" name="password" required="" placeholder="Password*"
                                                                 size="40" type="password" value="" />
                                                         </span>
                                                         <label>
@@ -1951,19 +1950,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="input-container">
-                                                    <div class="blocker">
-                                                    </div>
                                                     <div class="input-wrapper">
-                                                        <span class="wpcf7-form-control-wrap" data-name="country">
+                                                        <span class="wpcf7-form-control-wrap">
                                                             <select aria-invalid="false"
-                                                                class="wpcf7-form-control wpcf7-select country"
+                                                                class="wpcf7-form-control wpcf7-select"
                                                                 name="user_type">
+                                                                <option value="" disabled selected>I am a</option>
                                                                 <option value="{{ \App\Libraries\Enumerations\UserTypes::$STUDENT }}">Student</option>
                                                                 <option value="{{ \App\Libraries\Enumerations\UserTypes::$TEACHER }}">Teacher</option>
                                                             </select>
                                                         </span>
-                                                    </div>
-                                                    <div class="custom-dropdown" data-lenis-prevent="">
                                                     </div>
                                                 </div>
                                                 <button type="submit"
@@ -2086,13 +2082,12 @@
         </footer>
 
         <div
-            class="announcement-card [&amp;.show]:pointer-events-auto pointer-events-none fixed [&amp;.cookie-present]:bottom-[210px] bottom-[145px] md:!bottom-[165px] lg:!bottom-[190px] right-[20px] z-[2] w-[287px] md:w-[333px] rounded-[20px] bg-lbd-black p-[16px] md:py-[16px] md:px-[20px] opacity-0 transition-all ease-linear [&amp;.remove]:pointer-events-none [&amp;.remove]:hidden [&amp;.scoll-hide]:!z-[-1] [&amp;.scroll-hide]:pointer-events-none [&amp;.scroll-hide]:!opacity-0 [&amp;.show]:opacity-100">
+            class="login_wrapper announcement-card [&amp;.show]:pointer-events-auto pointer-events-none fixed [&amp;.cookie-present]:bottom-[210px] bottom-[145px] md:!bottom-[165px] lg:!bottom-[190px] right-[20px] z-[2] w-[287px] md:w-[333px] rounded-[20px] bg-lbd-black p-[16px] md:py-[16px] md:px-[20px] opacity-0 transition-all ease-linear [&amp;.remove]:pointer-events-none [&amp;.remove]:hidden [&amp;.scoll-hide]:!z-[-1] [&amp;.scroll-hide]:pointer-events-none [&amp;.scroll-hide]:!opacity-0 [&amp;.show]:opacity-100">
             <img alt="tooltip shape" class="absolute bottom-[-7px] right-[40px] md:right-[70px]"
                 src="static/assets/images/tooltip.svg" />
             <div class="content mx-auto mt-[24px] md:mt-[40px] lg:max-w-[690px]">
-                <div class="content [&amp;_input:focus]:ring-0 [&amp;_select:focus]:ring-0 [&amp;_textarea]:ring-0"
-                    data-caret="https://iamlearningbydesign.sg/wp-content/themes/learning-by-design/frontend/static/assets/dropdown-caret.svg ">
-                    <div class="wpcf7 no-js" data-wpcf7-id="91" dir="ltr" id="wpcf7-f91-p982-o1"
+                <div class="content [&amp;_input:focus]:ring-0 [&amp;_select:focus]:ring-0 [&amp;_textarea]:ring-0">
+                    <div class="login_content wpcf7 no-js" data-wpcf7-id="91" dir="ltr" id="wpcf7-f91-p982-o1"
                         lang="en-US">
                         <div class="screen-reader-response">
                             <p aria-atomic="true" aria-live="polite" role="status">
@@ -2102,8 +2097,7 @@
                         </div>
                         <img src="static/assets/images/Group-3w.svg" />
                         <form action="{{ route('postLogin') }}" aria-label="Log In form"
-                            class="wpcf7-form init" data-status="init" method="post"
-                            novalidate="novalidate">
+                            class="wpcf7-form init" method="POST">
                             {{ csrf_field() }}
                             <div style="display: none;">
                                 <input name="_wpcf7" type="hidden" value="91" />
@@ -2112,7 +2106,7 @@
                                 <input name="_wpcf7_unit_tag" type="hidden"
                                     value="wpcf7-f91-p982-o1" />
                                 <input name="_wpcf7_container_post" type="hidden" value="982" />
-                                <input name="_wpcf7_posted_data_hash" type="hidden" value="" />
+                                <input name="_wpcf7_posted_data_hash" type="hidden" val`ue="" />
                             </div>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -2138,7 +2132,7 @@
                                     <input 
                                         type="email" 
                                         name="email" 
-                                        id="announcement-email"s
+                                        
                                         class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text"
                                         placeholder="Email" 
                                         aria-required="true" 
@@ -2153,7 +2147,6 @@
                                     <input 
                                         type="password" 
                                         name="password" 
-                                        id="announcement-email"
                                         class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text"
                                         placeholder="Password*" 
                                         aria-required="true" 
@@ -2170,7 +2163,7 @@
                                             src="static/assets/images/checkbox.svg" />
                                         <img alt="Checkbox checked"
                                             class="absolute left-[-0.5px] top-[-0.5px] h-full w-full opacity-0 group-[.checked]/checkbox:opacity-100"
-                                            src="static/assets/images/announce-checkbox-checked.svg" />
+                                            src="static/assets/images/announce-c    heckbox-checked.svg" />
                                     </div>
                                     <p
                                         class="font-helvetica font-normal text-[13px] leading-[19px] md:text-[14px] md:leading-[28px] text-white">
@@ -2194,15 +2187,11 @@
                                 </div>
                                 <div
                                     class="image-container flex justify-center items-center relative">
-                                    <span class="aspect-square w-[24px] md:w-[30px]">
-                                        <img alt="flower"
-                                            class="w-full transition-all duration-300 ease-linear group-hover/cta:lg:rotate-[45deg]"
-                                            src="static/assets/images/flower .svg" />
+                                    <span class="aspect-square w-[24px] md:w-[30px] w-full transition-all duration-300 ease-linear group-hover/cta:lg:rotate-[45deg]">
+                                        
                                     </span>
-                                    <span class="aspect-square absolute w-[13px] md:w-[16px]">
-                                        <img alt="arrow"
-                                            class="w-full transition-all duration-300 ease-linear group-hover/cta:lg:rotate-[45deg]"
-                                            src="static/assets/images/arrow.svg" />
+                                    <span class="aspect-square absolute w-[13px] md:w-[16px] w-full transition-all duration-300 ease-linear group-hover/cta:lg:rotate-[45deg]">
+                                        
                                     </span>
                                 </div>
                             </button>
@@ -2296,15 +2285,6 @@
         wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
     </script>
     <script id="swv-js" src="{{ asset('static/assets/js/index.js') }}"></script>
-    <script id="contact-form-7-js-before">
-        var wpcf7 = {
-            "api": {
-                "root": "https:\/\/iamlearningbydesign.sg\/wp-json\/",
-                "namespace": "contact-form-7\/v1"
-            },
-            "cached": 1
-        };
-    </script>
     <script id="contact-form-7-js" src="{{ asset('static/assets/js/index.js') }}"></script>
     <script id="greydientlab-navigation-js" src="{{ asset('static/assets/js/navigation.js') }}"></script>
     <script id="main-js" src="{{ asset('static/assets/js/main.min.js') }}"></script>

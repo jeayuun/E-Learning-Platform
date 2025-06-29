@@ -22,7 +22,9 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="{{ url('dashboard') }}" class="site_title"><i class="fa fa-book"></i> <span>{{ $settings['app_name'] or 'E-Learning' }}</span></a>
+                    <a href="{{ url('dashboard') }}" class="site_title">
+                        <img src="static/assets/images/Group-3w.svg" alt="Logo" class="logo" style="width: 200px;">
+                    </a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -30,11 +32,11 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img src="{{ asset(Auth::user()->picture) }}" alt="user image" class="img-circle profile_img">
+                        <img src="{{ asset(Auth::user()->picture) }}" alt="user image" class="img-circle profile_img" style="margin-left: 20px; margin-top: 30px">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome,</span>
-                        <h2>{{ Auth::user()->name }}</h2>
+                        <span style="color: white">Welcome,</span>
+                        <h2 style="font-weight: 1000; font-size: 20px; color:rgb(247, 255, 139);">{{ Auth::user()->name }}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
