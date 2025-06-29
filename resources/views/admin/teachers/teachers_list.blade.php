@@ -30,9 +30,10 @@
                 <div class="x_panel">
 
                     <div class="x_title">
-                        <h2>Teacher List</h2>
-                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal">
-                            <i class="fa fa-plus"></i> Add Teacher
+                        <h2>All Teachers List</h2>
+                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal"
+                                style="border-radius: 15px; background-color: #f05227; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
+                            <img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/> Add Teacher
                         </button>
                         <div class="clearfix"></div>
                     </div>
@@ -42,14 +43,14 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong> No Data Found.
+                                <strong>Sorry!</strong> No Teacher Data Found.
                             </div>
                         @else
                         <?php $index = 0; ?>
-                        <table class="table table-striped table-bordered dataTable no-footer" id="data">
+                        <table class="table table-striped table-bordered dataTable no-footer" id="data" style="border-radius: 10px;">
                             <thead>
-                            <tr>
-                                <th>SL</th>
+                            <tr style="background: #0d5a33; color: #fff;">
+                                <th>Teacher ID</th>
                                 <th>Picture</th>
                                 <th>Name</th>
                                 <th>Email</th>

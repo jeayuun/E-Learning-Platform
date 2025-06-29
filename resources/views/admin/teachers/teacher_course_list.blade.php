@@ -30,7 +30,7 @@
                 <div class="x_panel">
 
                     <div class="x_title">
-                        <h2>Teacher Courses List</h2>
+                        <h2>KaleidoLearn Teachers List</h2>
                         <div class="clearfix"></div>
                     </div>
 
@@ -46,7 +46,7 @@
                         <table class="table table-striped table-bordered dataTable no-footer" id="data">
                             <thead>
                             <tr>
-                                <th>SL</th>
+                                <th>Teacher ID</th>
                                 <th>Course Title</th>
                                 <th>Short Code</th>
                                 <th>Attached Date</th>
