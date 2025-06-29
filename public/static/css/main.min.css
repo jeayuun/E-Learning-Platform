@@ -1,0 +1,1716 @@
+@font-face {
+    font-family: "BN Cringe";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../resources/fonts/BNCringeSans-Regular.ttf) format("truetype");
+    src: url(../fonts/BNCringeSans-Regular.otf) format("opentype")
+}
+
+@font-face {
+    font-family: "BN Cringe";
+    font-style: normal;
+    font-weight: 500;
+    src: url(../resources/fonts/BNCringeSans-Mediumttf) format("truetype");
+    src: url(../fonts/BNCringeSans-Medium.otf) format("opentype")
+}
+
+@font-face {
+    font-family: "BN Cringe";
+    font-style: normal;
+    font-weight: 700;
+    src: url(../resources/fonts/BNCringeSans-Bold.ttf) format("truetype");
+    src: url(../fonts/BNCringeSans-Bold.otf) format("opentype")
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../resources/fonts/HelveticaNeueLTPro-Roman.ttf) format("truetype");
+    src: url(../fonts/HelveticaNeueLTPro-Roman.otf) format("opentype")
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 500;
+    src: url(../resources/fonts/HelveticaNeueLTPro-Md.ttf) format("truetype");
+    src: url(../fonts/HelveticaNeueLTPro-Md.otf) format("opentype")
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 700;
+    src: url(../resources/fonts/HelveticaNeueLTPro-Bd.ttf) format("truetype");
+    src: url(../fonts/HelveticaNeueLTPro-Bd.otf) format("opentype")
+}
+
+body,
+html {
+    font-family: "Inter var", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 24px
+}
+
+body,
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: none;
+    overflow-x: clip
+}
+
+body.no-scroll,
+html.no-scroll {
+    overflow: hidden
+}
+
+.visually-hidden {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    white-space: nowrap
+}
+
+.overlay {
+    transition: opacity .5s linear
+}
+
+.overlay.show {
+    opacity: 1;
+    z-index: 25;
+    background-color: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(5px);
+    display: block;
+    transition-delay: .5s
+}
+
+.site-main {
+    transition: all .5s linear
+}
+
+.shapes {
+    transition: all .5s cubic-bezier(.22, .61, .36, 1)
+}
+
+.gl-animated {
+    opacity: 0;
+    transform: translateY(15%)
+}
+
+.gl-animated-img {
+    opacity: 0;
+    transform: translateY(5%)
+}
+
+@media screen and (min-width:1024px) {
+    .swiper-slide {
+        transition: all .3s cubic-bezier(.22, .61, .36, 1)
+    }
+
+    .swiper-slide.prev {
+        animation: star .3s cubic-bezier(.28, .84, .42, 1.4);
+        animation-delay: .5s
+    }
+
+    .swiper-slide.active {
+        animation: starActive .3s cubic-bezier(.28, .84, .42, 1.4);
+        animation-delay: .8s
+    }
+}
+
+@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio:2) {
+    .lbd-cursor {
+        display: none !important
+    }
+}
+
+@keyframes star {
+    0% {
+        transform: scale(.85) translateY(0)
+    }
+
+    100% {
+        transform: scale(.85) translateY(60px)
+    }
+}
+
+@keyframes starActive {
+    0% {
+        transform: scale(1) translateY(0)
+    }
+
+    100% {
+        transform: scale(1) translateY(60px)
+    }
+}
+
+@keyframes pulsing {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+.pulsing {
+    scale: 1;
+    animation: pulsing .8s cubic-bezier(.28, .84, .42, 1.4) infinite;
+    animation-delay: 1s;
+    transform-origin: center
+}
+
+.wpcf7-response-output,
+.wpcf7-spinner {
+    display: none !important
+}
+
+.wpcf7-form .input-flex {
+    display: flex;
+    gap: 16px
+}
+
+.wpcf7-form .input-flex>* {
+    flex: 1;
+    min-width: 0
+}
+
+.wpcf7-form .wpcf7-list-item-label {
+    pointer-events: all
+}
+
+.wpcf7-form .wpcf7-not-valid-tip {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: .16px;
+    color: #f05227;
+    font-weight: 400;
+    padding-left: 5px;
+    margin-top: 12px
+}
+
+.wpcf7-form .wpcf7-not-valid-tip:nth-of-type(n+2) {
+    display: none !important
+}
+
+.wpcf7-form .wpcf7-not-valid {
+    border-color: #f05227 !important
+}
+
+.wpcf7-form .input-container {
+    position: relative;
+    width: 100%;
+    margin-top: 16px
+}
+
+.wpcf7-form input {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    height: 64px;
+    width: 100%;
+    border-color: transparent;
+    background-color: #eef2f6;
+    border-radius: 16px;
+    padding: 12px 16px
+}
+
+.wpcf7-form select {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    height: 64px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    width: 100%;
+    background-color: #eef2f6;
+    border-color: transparent
+}
+
+.wpcf7-form select:hover {
+    background-color: #e9f7fb
+}
+
+.wpcf7-form select:not(:placeholder-shown) {
+    color: #2172b9
+}
+
+.wpcf7-form select:focus-visible {
+    border-color: transparent;
+    background-color: #e9f7fb
+}
+
+.wpcf7-form .blocker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1
+}
+
+.wpcf7-form textarea {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    width: 100%;
+    background-color: #eef2f6;
+    border-radius: 16px;
+    resize: none;
+    height: 110px;
+    border-color: transparent;
+    overflow-y: auto
+}
+
+.wpcf7-form label {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #4b5565;
+    pointer-events: none
+}
+
+.wpcf7-form .wpcf7-response-output {
+    display: none
+}
+
+.wpcf7-form input,
+.wpcf7-form textarea {
+    transition: background-color .2s linear
+}
+
+.wpcf7-form input:not(:placeholder-shown),
+.wpcf7-form textarea:not(:placeholder-shown) {
+    border-color: transparent;
+    background-color: #e9f7fb;
+    color: #2172b9
+}
+
+.wpcf7-form input:focus-visible,
+.wpcf7-form input:hover,
+.wpcf7-form textarea:focus-visible,
+.wpcf7-form textarea:hover {
+    border-color: #2172b9;
+    background-color: #e9f7fb
+}
+
+.wpcf7-form input::-webkit-input-placeholder,
+.wpcf7-form textarea::-webkit-input-placeholder {
+    opacity: 0
+}
+
+.wpcf7-form input:-moz-placeholder,
+.wpcf7-form textarea:-moz-placeholder {
+    opacity: 0
+}
+
+.wpcf7-form input::-moz-placeholder,
+.wpcf7-form textarea::-moz-placeholder {
+    opacity: 0
+}
+
+.wpcf7-form input:-ms-input-placeholder,
+.wpcf7-form textarea:-ms-input-placeholder {
+    opacity: 0
+}
+
+.wpcf7-form input::placeholder,
+.wpcf7-form textarea::placeholder {
+    opacity: 0
+}
+
+.wpcf7-form .input-wrapper {
+    position: relative
+}
+
+.wpcf7-form .input-wrapper label {
+    position: absolute;
+    top: 34px;
+    left: 17px;
+    transform: translateY(-50%);
+    transition: all .1s linear
+}
+
+.wpcf7-form .input-wrapper .has-value input {
+    padding-top: 30px
+}
+
+.wpcf7-form .input-wrapper .has-value+label {
+    top: 20px;
+    font-size: 12px;
+    font-weight: 500
+}
+
+.wpcf7-form .input-wrapper.has-value select {
+    padding-top: 30px;
+    background-color: #e9f7fb
+}
+
+.wpcf7-form .input-wrapper.has-value label {
+    top: 20px;
+    font-size: 12px;
+    font-weight: 500
+}
+
+.wpcf7-form .input-wrapper .hover-effect {
+    border-color: #2172b9 !important;
+    background-color: #e9f7fb
+}
+
+.wpcf7-form .custom-dropdown {
+    position: absolute;
+    padding: 10px;
+    padding-right: 24px;
+    width: 100%;
+    background: #fff;
+    display: none;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .25);
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 2;
+    border-radius: 20px;
+    margin-top: 10px
+}
+
+.wpcf7-form .custom-dropdown .simplebar-scrollbar::before {
+    background-color: #e4e7ec
+}
+
+.wpcf7-form .custom-dropdown .simplebar-track.simplebar-vertical {
+    top: 16px;
+    right: 10px
+}
+
+.wpcf7-form .custom-dropdown li {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 18px;
+    line-height: 1;
+    padding: 20px 16px;
+    border-radius: 12px;
+    color: #4b5565
+}
+
+.wpcf7-form .custom-dropdown li.active,
+.wpcf7-form .custom-dropdown li:active {
+    color: #2172b9;
+    background-color: #e9f7fb !important
+}
+
+.wpcf7-form .custom-dropdown li:hover:not(.active) {
+    background-color: #eef2f6
+}
+
+.wpcf7-form .gl-b-submit span:first-of-type {
+    background-image: url(../assets/images/flower.svg);
+    background-size: cover
+}
+
+.wpcf7-form .gl-b-submit span {
+    background-image: url(../assets/images/flower-arrow.svg);
+    background-size: cover
+}
+
+#footer-menu a {
+    display: inline-block;
+    width: fit-content;
+    position: relative
+}
+
+#footer-menu a::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    background-color: #000;
+    width: 100%;
+    transition: all .3s ease-in-out
+}
+
+#footer-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    transition: all .3s ease-in-out;
+    transition-delay: .3s
+}
+
+#footer-menu a:hover::before {
+    width: 0;
+    left: unset;
+    right: 0
+}
+
+#footer-menu a:hover::after {
+    right: unset;
+    left: 0;
+    width: 100%
+}
+
+.cky-consent-container {
+    z-index: 9999 !important
+}
+
+.cky-consent-container.cky-box-bottom-left {
+    left: 20px !important
+}
+
+.cky-consent-bar {
+    padding: 16px 20px !important;
+    border-radius: 60px !important;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .1490196078) !important;
+    border: 0 !important;
+    width: fit-content
+}
+
+.cky-consent-bar .cky-notice {
+    display: flex;
+    align-items: center
+}
+
+.cky-consent-bar .cky-notice .cky-title {
+    font-family: "BN Cringe", sans-serif;
+    font-size: 22px !important;
+    line-height: 26px !important;
+    letter-spacing: -.33px !important;
+    margin: 0;
+    margin-right: 24px
+}
+
+.cky-consent-bar .cky-notice .cky-notice-des {
+    display: none !important
+}
+
+.cky-consent-bar .cky-notice .cky-notice-btn-wrapper {
+    display: flex;
+    margin-top: 0 !important;
+    gap: 0 !important
+}
+
+.cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    position: relative;
+    padding: 0 !important;
+    margin: 0 !important;
+    padding-top: 4px !important;
+    order: 2;
+    border: 0 !important;
+    color: #1c1c1b !important
+}
+
+.cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    background-color: #000;
+    width: 100%;
+    transition: all .3s ease-in-out
+}
+
+.cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    transition: all .3s ease-in-out;
+    transition-delay: .3s
+}
+
+.cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize:hover::before {
+    width: 0;
+    left: unset;
+    right: 0
+}
+
+.cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize:hover::after {
+    right: unset;
+    left: 0;
+    width: 100%
+}
+
+.cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-accept {
+    padding: 12px 16px !important;
+    padding-bottom: 8px !important;
+    border-radius: 112px !important;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    margin-right: 12px !important;
+    background-color: #1c1c1b !important;
+    border: 0 !important
+}
+
+.cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-reject {
+    display: none !important
+}
+
+.cky-modal {
+    z-index: 9999 !important;
+    padding: 24px !important;
+    padding-right: 0 !important;
+    max-width: 688px !important;
+    border-radius: 20px !important
+}
+
+.cky-horizontal-separator {
+    display: none !important
+}
+
+.cky-preference-header {
+    padding: 0 !important;
+    border: 0 !important;
+    padding-right: 24px !important
+}
+
+.cky-preference-header .cky-preference-title {
+    font-family: "BN Cringe", sans-serif !important;
+    font-size: 28px !important;
+    line-height: 32px !important;
+    font-weight: 700 !important;
+    letter-spacing: -.42px !important;
+    color: #1c1c1b !important
+}
+
+.cky-preference-header .cky-btn-close img {
+    height: 20px !important;
+    width: 20px !important
+}
+
+.cky-preference-body-wrapper {
+    padding: 0 !important;
+    max-height: 400px;
+    padding-right: 24px !important
+}
+
+.cky-preference-body-wrapper .simplebar-scrollbar::before {
+    background-color: #e4e7ec
+}
+
+.cky-preference-body-wrapper .simplebar-track.simplebar-vertical {
+    top: 16px;
+    right: 5px
+}
+
+.cky-preference-body-wrapper .cky-preference-content-wrapper {
+    padding: 0 !important;
+    margin-top: 16px !important;
+    border: 0 !important
+}
+
+.cky-preference-body-wrapper .cky-preference-content-wrapper p {
+    font-family: HelveticaNeue, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: 400 !important;
+    color: #4b5565 !important
+}
+
+.cky-prefrence-btn-wrapper {
+    padding: 0 !important;
+    padding-top: 24px !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 12px !important;
+    border: 0 !important
+}
+
+.cky-prefrence-btn-wrapper .cky-btn {
+    max-width: fit-content !important
+}
+
+.cky-prefrence-btn-wrapper .cky-btn-reject {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    position: relative;
+    padding: 0 !important;
+    padding-top: 4px !important;
+    margin: 0 !important;
+    color: #1c1c1b !important;
+    border: 0 !important
+}
+
+.cky-prefrence-btn-wrapper .cky-btn-reject::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    background-color: #000;
+    width: 100%;
+    transition: all .3s ease-in-out
+}
+
+.cky-prefrence-btn-wrapper .cky-btn-reject::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    height: 1px;
+    background-color: #000;
+    width: 0;
+    transition: all .3s ease-in-out;
+    transition-delay: .3s
+}
+
+.cky-prefrence-btn-wrapper .cky-btn-reject:hover::before {
+    width: 0;
+    left: unset;
+    right: 0
+}
+
+.cky-prefrence-btn-wrapper .cky-btn-reject:hover::after {
+    right: unset;
+    left: 0;
+    width: 100%
+}
+
+.cky-prefrence-btn-wrapper .cky-btn-preferences {
+    padding: 12px 16px !important;
+    padding-bottom: 8px !important;
+    border-radius: 112px !important;
+    margin-right: 0 !important;
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 0 !important
+}
+
+.cky-prefrence-btn-wrapper .cky-btn-accept {
+    display: none !important
+}
+
+.cky-switch {
+    gap: 8px !important;
+    align-items: center !important
+}
+
+.cky-switch .status {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    color: #4b5565;
+    position: relative;
+    top: 2px
+}
+
+.cky-audit-table {
+    background-color: transparent !important
+}
+
+.cky-audit-table .cky-cookie-des-table {
+    padding: 16px 0 !important;
+    border-color: #cdd5df !important
+}
+
+.cky-audit-table .cky-cookie-des-table li {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 14px;
+    line-height: 20px
+}
+
+.cky-audit-table .cky-cookie-des-table:first-child {
+    padding-top: 0 !important
+}
+
+.cky-audit-table .cky-cookie-des-table:last-child {
+    padding-bottom: 0 !important
+}
+
+.cky-accordion-wrapper {
+    margin-top: 24px
+}
+
+.cky-accordion {
+    margin-top: 8px !important;
+    border: 0 !important
+}
+
+.cky-accordion .cky-audit-table {
+    margin-top: 16px
+}
+
+.cky-accordion .cky-switch input[type=checkbox] {
+    background-color: #4b5565;
+    width: 46px;
+    height: 28px
+}
+
+.cky-accordion .cky-switch input[type=checkbox]:focus {
+    --tw-ring-color: transparent;
+    --tw-ring-shadow: 0
+}
+
+.cky-accordion .cky-switch input[type=checkbox]::before {
+    width: 22px;
+    height: 22px;
+    left: 4px;
+    bottom: 3px
+}
+
+.cky-accordion .cky-switch input[type=checkbox]:checked {
+    background-color: #2172b9
+}
+
+.cky-accordion .cky-switch input[type=checkbox]:checked::before {
+    transform: translateX(16px)
+}
+
+.cky-accordion:first-of-type {
+    margin-top: 0 !important
+}
+
+.cky-accordion .cky-accordion-item {
+    padding: 16px !important;
+    background-color: #eef2f6;
+    border-radius: 20px;
+    margin-top: 0 !important
+}
+
+.cky-accordion .cky-accordion-item .cky-chevron-right::before {
+    height: 20px !important;
+    width: 20px !important;
+    border: 0 !important;
+    background-image: url(../assets/Chevron.svg);
+    transform: rotate(0);
+    top: 2px
+}
+
+.cky-accordion .cky-accordion-header-des {
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s linear
+}
+
+.cky-accordion .cky-accordion-header-des p {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #4b5565
+}
+
+.cky-accordion.cky-accordion-active .cky-accordion-item .cky-chevron-right::before {
+    transform: rotate(90deg)
+}
+
+.cky-accordion.cky-accordion-active .cky-accordion-item .cky-accordion-header-des {
+    max-height: 100%;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #cdd5df
+}
+
+.cky-accordion .cky-accordion-header button {
+    font-family: "BN Cringe", sans-serif;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 700;
+    letter-spacing: -.33px;
+    color: #1c1c1b
+}
+
+.cky-accordion .cky-accordion-header .cky-always-active {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400
+}
+
+.cky-overlay {
+    z-index: 9999 !important
+}
+
+.cky-footer-wrapper {
+    padding-right: 24px !important
+}
+
+.cky-footer-wrapper>div:last-of-type {
+    padding: 0 !important;
+    justify-content: flex-start !important;
+    background-color: transparent !important
+}
+
+@media screen and (max-width:1024px) {
+
+    body,
+    html {
+        cursor: default
+    }
+
+    .cky-consent-bar {
+        padding: 12px 20px !important;
+        width: fit-content
+    }
+
+    .cky-consent-bar .cky-notice {
+        display: flex;
+        align-items: center
+    }
+
+    .cky-consent-bar .cky-notice .cky-title {
+        font-size: 20px !important;
+        line-height: 25px !important;
+        letter-spacing: -.3px !important;
+        margin-right: 16px
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper {
+        display: flex;
+        margin-top: 0 !important
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize {
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+        position: relative;
+        padding: 0 !important;
+        padding-top: 4px !important;
+        margin: 0 !important;
+        order: 2
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 1px;
+        background-color: #000;
+        width: 100%;
+        transition: all .3s ease-in-out
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        height: 1px;
+        background-color: #000;
+        width: 0;
+        transition: all .3s ease-in-out;
+        transition-delay: .3s
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize:hover::before {
+        width: 0;
+        left: unset;
+        right: 0
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize:hover::after {
+        right: unset;
+        left: 0;
+        width: 100%
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-accept {
+        padding: 12px 16px !important;
+        padding-bottom: 8px !important;
+        border-radius: 112px !important;
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 16px;
+        line-height: 1;
+        margin-right: 12px !important
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-reject {
+        display: none !important
+    }
+
+    .cky-modal {
+        max-width: 522px !important
+    }
+
+    .cky-preference-header .cky-preference-title {
+        font-size: 26px !important;
+        line-height: 30px !important;
+        letter-spacing: -.26px !important
+    }
+
+    .cky-switch {
+        gap: 8px !important;
+        align-items: center !important
+    }
+
+    .cky-switch .status {
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 400;
+        color: #4b5565;
+        position: relative;
+        top: 2px
+    }
+
+    .cky-accordion-wrapper {
+        margin-top: 24px
+    }
+
+    .cky-accordion {
+        margin-top: 8px !important;
+        border: 0 !important
+    }
+
+    .cky-accordion .cky-audit-table {
+        margin-top: 16px
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox] {
+        background-color: #4b5565;
+        width: 46px;
+        height: 28px
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox]:focus {
+        --tw-ring-color: transparent;
+        --tw-ring-shadow: 0
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox]::before {
+        width: 22px;
+        height: 22px;
+        left: 4px;
+        bottom: 3px
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox]:checked {
+        background-color: #2172b9
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox]:checked::before {
+        transform: translateX(16px)
+    }
+
+    .cky-accordion:first-of-type {
+        margin-top: 0 !important
+    }
+
+    .cky-accordion .cky-accordion-item {
+        padding: 16px !important;
+        background-color: #eef2f6;
+        border-radius: 20px;
+        margin-top: 0 !important
+    }
+
+    .cky-accordion .cky-accordion-item .cky-chevron-right::before {
+        height: 20px !important;
+        width: 20px !important;
+        border: 0 !important;
+        background-image: url(../assets/Chevron.svg);
+        transform: rotate(0);
+        top: 2px
+    }
+
+    .cky-accordion.cky-accordion-active .cky-accordion-item .cky-chevron-right::before {
+        transform: rotate(90deg)
+    }
+
+    .cky-accordion.cky-accordion-active .cky-accordion-item .cky-accordion-header-des {
+        max-height: 100%;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #cdd5df
+    }
+
+    .cky-accordion .cky-accordion-header button {
+        font-size: 20px;
+        line-height: 25px;
+        letter-spacing: -.3px
+    }
+
+    .cky-overlay {
+        z-index: 9999 !important
+    }
+
+    .cky-footer-wrapper {
+        padding-right: 24px !important
+    }
+
+    .cky-footer-wrapper>div:last-of-type {
+        background-color: transparent !important
+    }
+}
+
+@media screen and (max-width:768px) {
+    .wpcf7-form .wpcf7-not-valid-tip {
+        font-size: 13px;
+        line-height: 1;
+        margin-top: 8px
+    }
+
+    .wpcf7-form .input-container {
+        margin-top: 12px
+    }
+
+    .wpcf7-form input {
+        font-size: 16px;
+        height: 56px
+    }
+
+    .wpcf7-form select {
+        font-size: 16px;
+        height: 56px
+    }
+
+    .wpcf7-form textarea {
+        font-size: 16px;
+        width: 100%;
+        background-color: #eef2f6;
+        border-radius: 16px;
+        resize: none;
+        height: 110px;
+        border-color: transparent;
+        overflow-y: auto
+    }
+
+    .wpcf7-form label {
+        font-size: 16px
+    }
+
+    .wpcf7-form .input-wrapper {
+        position: relative
+    }
+
+    .wpcf7-form .input-wrapper label {
+        top: 30px
+    }
+
+    .wpcf7-form .input-wrapper .has-value input {
+        padding-top: 30px
+    }
+
+    .wpcf7-form .input-wrapper .has-value+label {
+        top: 18px;
+        font-size: 10px
+    }
+
+    .wpcf7-form .input-wrapper.has-value select {
+        padding-top: 22px
+    }
+
+    .wpcf7-form .input-wrapper.has-value label {
+        top: 15px;
+        font-size: 10px
+    }
+
+    .wpcf7-form .input-wrapper .hover-effect {
+        background-color: #e9f7fb
+    }
+
+    .wpcf7-form .textarea-wrapper .has-value textarea {
+        padding-top: 30px
+    }
+
+    .wpcf7-form .textarea-wrapper .hover-effect {
+        background-color: #e9f7fb
+    }
+
+    .wpcf7-form .custom-dropdown {
+        margin-top: 10px
+    }
+
+    .wpcf7-form .custom-dropdown li {
+        font-size: 16px;
+        line-height: 1;
+        padding: 20px 8px
+    }
+
+    .wpcf7-form .custom-dropdown li.active,
+    .wpcf7-form .custom-dropdown li:active {
+        color: #2172b9;
+        background-color: #e9f7fb !important
+    }
+
+    .wpcf7-form .custom-dropdown li:hover:not(.active) {
+        background-color: #f8fafc
+    }
+
+    .wpcf7-form .gl-b-submit span:first-of-type {
+        background-image: url(../assets/images/flower.svg);
+        background-size: cover
+    }
+
+    .wpcf7-form .gl-b-submit span {
+        background-image: url(../assets/images/flower-arrow.svg);
+        background-size: cover
+    }
+
+    .cky-consent-container {
+        width: 100% !important;
+        padding: 0 16px !important
+    }
+
+    .cky-consent-container.cky-box-bottom-left {
+        left: 0 !important;
+        bottom: 40px !important
+    }
+
+    .cky-consent-bar {
+        padding: 8px 20px !important;
+        width: 100% !important
+    }
+
+    .cky-consent-bar .cky-notice {
+        justify-content: space-between
+    }
+
+    .cky-consent-bar .cky-notice .cky-title {
+        font-size: 18px !important;
+        line-height: 22px !important;
+        letter-spacing: -.18px !important;
+        margin-right: 16px;
+        padding: 0 !important
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper {
+        flex-wrap: nowrap;
+        flex-direction: row !important;
+        padding: 0 !important
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize {
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1;
+        position: relative;
+        padding: 0 !important;
+        margin: 0 !important;
+        order: 2;
+        overflow: visible !important
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 1px;
+        background-color: #000;
+        width: 100%;
+        transition: all .3s ease-in-out
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        height: 1px;
+        background-color: #000;
+        width: 0;
+        transition: all .3s ease-in-out;
+        transition-delay: .3s
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize:hover::before {
+        width: 0;
+        left: unset;
+        right: 0
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-customize:hover::after {
+        right: unset;
+        left: 0;
+        width: 100%
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-accept {
+        margin-right: 6 !important;
+        margin-top: 0 !important
+    }
+
+    .cky-consent-bar .cky-notice .cky-notice-btn-wrapper .cky-btn-reject {
+        display: none !important
+    }
+
+    .cky-modal {
+        padding: 20px 18px 18px !important;
+        padding-right: 0 !important;
+        max-width: 95% !important;
+        border-radius: 20px !important
+    }
+
+    .cky-horizontal-separator {
+        display: none !important
+    }
+
+    .cky-preference-header {
+        padding-right: 18px !important
+    }
+
+    .cky-preference-header .cky-preference-title {
+        font-size: 22px !important;
+        line-height: 26px !important;
+        letter-spacing: -.22px !important
+    }
+
+    .cky-preference-header .cky-btn-close img {
+        height: 13px !important;
+        width: 13px !important
+    }
+
+    .cky-preference-body-wrapper {
+        padding-right: 18px !important
+    }
+
+    .cky-preference-body-wrapper .cky-preference-content-wrapper p {
+        font-size: 13px !important;
+        line-height: 19px !important
+    }
+
+    .cky-prefrence-btn-wrapper {
+        padding: 0 !important;
+        padding-top: 20px !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 12px !important
+    }
+
+    .cky-prefrence-btn-wrapper .cky-btn {
+        max-width: fit-content !important
+    }
+
+    .cky-prefrence-btn-wrapper .cky-btn-reject {
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1;
+        position: relative;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: #1c1c1b !important;
+        border: 0 !important;
+        top: 0;
+        order: 1 !important
+    }
+
+    .cky-prefrence-btn-wrapper .cky-btn-reject::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 1px;
+        background-color: #000;
+        width: 100%;
+        transition: all .3s ease-in-out
+    }
+
+    .cky-prefrence-btn-wrapper .cky-btn-reject::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        height: 1px;
+        background-color: #000;
+        width: 0;
+        transition: all .3s ease-in-out;
+        transition-delay: .3s
+    }
+
+    .cky-prefrence-btn-wrapper .cky-btn-reject:hover::before {
+        width: 0;
+        left: unset;
+        right: 0
+    }
+
+    .cky-prefrence-btn-wrapper .cky-btn-reject:hover::after {
+        right: unset;
+        left: 0;
+        width: 100%
+    }
+
+    .cky-prefrence-btn-wrapper .cky-btn-preferences {
+        padding: 12px 16px !important;
+        padding-bottom: 8px !important;
+        border-radius: 112px !important;
+        margin-right: 0 !important;
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 16px;
+        line-height: 1;
+        background-color: #000 !important;
+        color: #fff !important;
+        border: 0 !important;
+        height: 42px
+    }
+
+    .cky-prefrence-btn-wrapper .cky-btn-accept {
+        display: none !important
+    }
+
+    .cky-switch {
+        gap: 8px !important;
+        align-items: center !important
+    }
+
+    .cky-switch .status {
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 400;
+        color: #4b5565;
+        position: relative;
+        top: 2px
+    }
+
+    .cky-accordion-wrapper {
+        margin-top: 24px
+    }
+
+    .cky-accordion {
+        margin-top: 8px !important;
+        border: 0 !important
+    }
+
+    .cky-accordion .cky-audit-table {
+        margin-top: 16px
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox] {
+        background-color: #4b5565;
+        width: 40px;
+        height: 24px
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox]:focus {
+        --tw-ring-color: transparent;
+        --tw-ring-shadow: 0
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox]::before {
+        width: 18px;
+        height: 18px;
+        left: 2px;
+        bottom: 3px
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox]:checked {
+        background-color: #2172b9
+    }
+
+    .cky-accordion .cky-switch input[type=checkbox]:checked::before {
+        transform: translateX(16px)
+    }
+
+    .cky-accordion:first-of-type {
+        margin-top: 0 !important
+    }
+
+    .cky-accordion .cky-accordion-item {
+        padding: 16px !important;
+        background-color: #eef2f6;
+        border-radius: 20px;
+        margin-top: 0 !important
+    }
+
+    .cky-accordion .cky-accordion-item .cky-accordion-header {
+        position: relative;
+        top: 2px
+    }
+
+    .cky-accordion .cky-accordion-item .cky-accordion-chevron {
+        width: 20px !important;
+        margin-right: 3px
+    }
+
+    .cky-accordion .cky-accordion-item .cky-accordion-chevron .cky-chevron-right::before {
+        height: 20px !important;
+        width: 20px !important;
+        border: 0 !important;
+        background-image: url(../assets/Chevron.svg);
+        transform: rotate(0);
+        top: 2px
+    }
+
+    .cky-accordion .cky-accordion-header-des {
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all .3s linear
+    }
+
+    .cky-accordion .cky-accordion-header-des p {
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #4b5565
+    }
+
+    .cky-accordion.cky-accordion-active .cky-accordion-item .cky-chevron-right::before {
+        transform: rotate(90deg)
+    }
+
+    .cky-accordion.cky-accordion-active .cky-accordion-item .cky-accordion-header-des {
+        max-height: 100%;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #cdd5df
+    }
+
+    .cky-accordion .cky-accordion-header button {
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -.18px;
+        color: #1c1c1b
+    }
+
+    .cky-accordion .cky-accordion-header .cky-always-active {
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 13px;
+        line-height: 19px;
+        font-weight: 400
+    }
+
+    .cky-overlay {
+        z-index: 9999 !important
+    }
+
+    .cky-footer-wrapper {
+        padding-right: 18px !important
+    }
+
+    .cky-footer-wrapper>div:last-of-type {
+        padding-top: 18px !important;
+        background-color: transparent !important
+    }
+}
+
+header .overlay {
+    background: linear-gradient(0deg, #f05227 15%, rgba(240, 82, 39, 0) 111%)
+}
+
+.site-branding img {
+    position: relative;
+    z-index: 2;
+    -webkit-filter: drop-shadow(0 0 6px rgba(0, 0, 0, .2));
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, .2))
+}
+
+.lbd-menu {
+    cursor: pointer;
+    transition: all .5s linear;
+    position: relative
+}
+
+.lbd-menu #lottie-morph {
+    -webkit-filter: drop-shadow(0 0 6px rgba(0, 0, 0, .2));
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, .2))
+}
+
+.lbd-menu #button {
+    pointer-events: all;
+    position: relative
+}
+
+.lbd-menu .mobile-menu {
+    -webkit-filter: drop-shadow(0 0 6px rgba(0, 0, 0, .2));
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, .2))
+}
+
+.lbd-menu .simplebar-scrollbar::before {
+    background-color: #ef8061
+}
+
+.lbd-menu .menu-container {
+    background-color: #f05227;
+    border-radius: 12px;
+    display: none;
+    transition: opacity .2s linear;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, .2)
+}
+
+.lbd-menu .menu-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(0deg, #f05227 15%, rgba(240, 82, 39, 0) 111%);
+    pointer-events: none;
+    opacity: 0;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: all .3s linear
+}
+
+.lbd-menu .menu-container.simplebar-scrollable-y.end-scroll::after {
+    opacity: 0
+}
+
+.lbd-menu .menu-container.simplebar-scrollable-y::after {
+    opacity: 1
+}
+
+.lbd-menu li.menu-item::before {
+    position: relative;
+    top: 3px;
+    content: "";
+    background-image: url(../../static/assets/menu-flower.svg);
+    height: 15px;
+    width: 15px;
+    background-size: cover;
+    display: inline-block;
+    margin-right: 4px;
+    opacity: 0;
+    transition: opacity .3s linear
+}
+
+.lbd-menu li.menu-item:not(.menu-item-has-children) a {
+    display: inline-block;
+    width: fit-content;
+    position: relative
+}
+
+.lbd-menu li.menu-item:not(.menu-item-has-children) a::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    height: 1px;
+    background-color: #fff;
+    width: 0;
+    transition: all .3s ease-in-out
+}
+
+.lbd-menu li.menu-item:not(.menu-item-has-children) a:hover::before {
+    width: 100%;
+    left: 0;
+    right: unset
+}
+
+.lbd-menu li.menu-item.current-menu-item a::before {
+    display: none
+}
+
+.lbd-menu li.menu-item.current-menu-item:not(.menu-item-has-children)::before {
+    opacity: 1
+}
+
+.lbd-menu li.menu-item:hover:not(.menu-item-has-children)::before {
+    opacity: 1
+}
+
+.lbd-menu.open {
+    min-height: auto;
+    overflow: visible;
+    border-radius: 12px
+}
+
+.lbd-menu.open #lottie-morph {
+    -webkit-filter: drop-shadow(0);
+    filter: drop-shadow(0)
+}
+
+.lbd-menu.open .menu-text {
+    opacity: 0
+}
+
+.lbd-menu.overflow {
+    overflow: hidden
+}
+
+.lbd-menu.transform-rectangle .back {
+    opacity: 1;
+    cursor: pointer
+}
+
+.lbd-menu.transform-rectangle .menu {
+    opacity: 1
+}
+
+@media screen and (max-width:1024px) {
+    .lbd-menu {
+        cursor: pointer;
+        transition: all .5s linear;
+        position: relative
+    }
+
+    .lbd-menu li.menu-item:not(.menu-item-has-children) a::before {
+        display: none
+    }
+}
+
+.menu-container-mobile::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(0deg, #f05227 15%, rgba(240, 82, 39, 0) 111%);
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s linear
+}
+
+.menu-container-mobile.simplebar-scrollable-y.end-scroll::after {
+    opacity: 0
+}
+
+.menu-container-mobile.simplebar-scrollable-y::after {
+    opacity: 1
+}
+
+.menu-container-mobile li.menu-item::before {
+    position: relative;
+    top: 3px;
+    content: "";
+    background-image: url(../../static/assets/images/menu-flower.svg);
+    height: 15px;
+    width: 15px;
+    background-size: cover;
+    display: inline-block;
+    margin-right: 8px;
+    opacity: 0;
+    transition: opacity .3s linear
+}
+
+.menu-container-mobile li.menu-item.current-menu-item:not(.menu-item-has-children)::before {
+    opacity: 1
+}
+
+.menu-container-mobile li.menu-item:hover:not(.menu-item-has-children)::before {
+    opacity: 1
+}
