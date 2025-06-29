@@ -34,7 +34,7 @@
                         <h2>All Courses List</h2>
                         <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal"
                                 style="border-radius: 15px; background-color: #19588e; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
-                            <img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/> 
+                            <img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/> 
                             @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
                                 Add Course
                             @else

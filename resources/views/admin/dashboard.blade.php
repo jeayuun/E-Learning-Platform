@@ -23,7 +23,7 @@
                 <div class="icon"><i class="fas fa-chalkboard-teacher" style="color: green;"></i></i></div>
                 <div class="count" style="color: green;">{{ $totalTeachers or 0 }}</div>
                 <h3 style="color: green;">Teachers</h3>
-                <img src="static\assets\images\green-overlay.svg" alt="Teachers Image" class="tile-image">
+                <img src="{{ asset('static/assets/images/green-overlay.svg') }}" alt="Teachers Image" class="tile-image">
             </div>
         </div>
 
@@ -32,7 +32,7 @@
                 <div class="icon"><i class="fa fa-users"  style="color: #f5a0c2;"></i></div>
                 <div class="count" style="color: rgb(246, 142, 184)">{{ $totalStudents or 0 }}</div>
                 <h3 style="color:rgb(246, 142, 184);">Students</h3>
-                <img src="static\assets\images\pink-overlay.svg" alt="Teachers Image" class="tile-image">
+                <img src="{{ asset('static/assets/images/pink-overlay.svg') }}" alt="Teachers Image" class="tile-image">
             </div>
         </div>
 
@@ -41,7 +41,7 @@
                 <div class="icon"><i class="fa fa-book"  style="color: #2172b9;"></i></div>
                 <div class="count" style="color:rgb(14, 82, 141)">{{ $totalCourses or 0 }}</div>
                 <h3 style="color: rgb(14, 82, 141)">Courses</h3>
-                <img src="static\assets\images\blue-overlay.svg" alt="Blue Image" class="tile-image">
+                <img src="{{ asset('static/assets/images/blue-overlay.svg') }}" alt="Blue Image" class="tile-image">
             </div>
         </div>
 
@@ -50,7 +50,7 @@
                 <div class="icon"><i class="fa fa-graduation-cap"  style="color: #f9c130;"></i></div>
                 <div class="count" style="color: #f9c130;">{{ $totalCertified or 0}}</div>
                 <h3 style="color: #f9c130;">Certified Students</h3>
-                <img src="static\assets\images\yellow-overlay.svg" alt="Pink Image" class="tile-image">
+                <img src="{{ asset('static/assets/images/yellow-overlay.svg') }}" alt="Pink Image" class="tile-image">
             </div>
         </div>
 

@@ -23,7 +23,7 @@
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
                     <a href="{{ url('dashboard') }}" class="site_title">
-                        <img src="static/assets/images/Group-3w.svg" alt="Logo" class="logo" style="width: 200px;">
+                        <img src="{{ asset('static/assets/images/Group-3w.svg') }}" alt="Logo" class="logo" style="width: 200px;">
                     </a>
                 </div>
 

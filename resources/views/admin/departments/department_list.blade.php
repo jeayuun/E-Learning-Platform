@@ -31,7 +31,7 @@
                         <h2>Subjects List</h2>
                         <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal"
                                 style="border-radius: 15px; background-color: #f9c130; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
-                            <img src="static/assets/images/flower-center2.svg" style="width: 20px; margin-right: 5px"/>  @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
+                            <img src="{{ asset('static/assets/images/flower-center2.svg') }}" style="width: 20px; margin-right: 5px"/>  @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
                                                             Add Subject
                                                        @else
                                                            Request new subject

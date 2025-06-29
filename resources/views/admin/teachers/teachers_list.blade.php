@@ -33,7 +33,7 @@
                         <h2>All Teachers List</h2>
                         <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal"
                                 style="border-radius: 15px; background-color: #f05227; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
-                            <img src="static/assets/images/flower.svg" style="width: 20px; margin-right: 5px"/> Add Teacher
+                            <img src="{{ asset('static/assets/images/flower.svg') }}" style="width: 20px; margin-right: 5px"/> Add Teacher
                         </button>
                         <div class="clearfix"></div>
                     </div>

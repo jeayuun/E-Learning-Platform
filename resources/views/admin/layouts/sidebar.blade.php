@@ -14,7 +14,7 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                  <li>
                       <a><i class="fas fa-users-cog w-5 sidebar-icon" style="margin-right: 17px"></i> Teacher <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                      <li class="{{Route::currentRouteName()=='teachers-list' ? 'active' : ''}}"><a href="{{Route('teachers-list')}}"><img src="static/assets/images/flower.svg" style="width: 20px; margin-right: 5px"/></i> Manage Teachers </a></li>
+                      <li class="{{Route::currentRouteName()=='teachers-list' ? 'active' : ''}}"><a href="{{Route('teachers-list')}}"><img src="{{ asset('static/assets/images/flower.svg') }}" style="width: 20px; margin-right: 5px"/></i> Manage Teachers </a></li>
                       </ul>
                  </li>
                     @endif
@@ -23,10 +23,10 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                       <a><i class="fa-regular fa-address-book w-5 sidebar-icon" style="margin-right: 22px"></i> Student <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                         @if($user_type == $admin)
-                      <li class="{{Route::currentRouteName()=='students-list' ? 'active' : ''}}"><a href="{{Route('students-list')}}"><img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/></i> Manage Students </a></li>
+                      <li class="{{Route::currentRouteName()=='students-list' ? 'active' : ''}}"><a href="{{Route('students-list')}}"><img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/></i> Manage Students </a></li>
                         @endif
                         @if($user_type == $teacher)
-                      <li class="{{Route::currentRouteName()=='getTeacherStudentsListPage' ? 'active' : ''}}"><a href="{{Route('getTeacherStudentsListPage')}}"><img src="static/assets/images/number-shape-polygon-mobile.svg" style="width: 20px; margin-right: 5px"/></i> My Students </a></li>
+                      <li class="{{Route::currentRouteName()=='getTeacherStudentsListPage' ? 'active' : ''}}"><a href="{{Route('getTeacherStudentsListPage')}}"><img src="{{ asset('static/assets/images/number-shape-polygon-mobile.svg') }}" style="width: 20px; margin-right: 5px"/></i> My Students </a></li>
                         @endif
 
                       </ul>
@@ -36,7 +36,7 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                  <li>
                       <a><i class="fa-solid fa-bookmark" aria-hidden="true" style="margin-right: 27px"></i> Subject <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                      <li class="{{Route::currentRouteName()=='departments-list' ? 'active' : ''}}"><a href="{{Route('departments-list')}}"><img src="static/assets/images/flower-center2.svg" style="width: 20px; margin-right: 5px"/></i> Manage Subjects </a></li>
+                      <li class="{{Route::currentRouteName()=='departments-list' ? 'active' : ''}}"><a href="{{Route('departments-list')}}"><img src="{{ asset('static/assets/images/flower-center2.svg') }}" style="width: 20px; margin-right: 5px"/></i> Manage Subjects </a></li>
                       </ul>
                  </li>
                     @endif
@@ -44,7 +44,7 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                  <li>
                       <a><i class="fa-solid fa-bookmark" aria-hidden="true" style="margin-right: 27px"></i> Subject <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                      <li class="{{Route::currentRouteName()=='departments-list' ? 'active' : ''}}"><a href="{{Route('departments-list')}}"><img src="static/assets/images/flower-center2.svg" style="width: 20px; margin-right: 5px"/></i> View Subjects </a></li>
+                      <li class="{{Route::currentRouteName()=='departments-list' ? 'active' : ''}}"><a href="{{Route('departments-list')}}"><img src="{{ asset('static/assets/images/flower-center2.svg') }}" style="width: 20px; margin-right: 5px"/></i> View Subjects </a></li>
                       </ul>
                  </li>
                     @endif
@@ -52,20 +52,20 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                       <a><i class="fas fa-book w-5 sidebar-icon" style="margin-right: 25px"></i> Course <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                       @if($user_type == $admin)
-                      <li class="{{Route::currentRouteName()=='courses-list' ? 'active' : ''}}"><a href="{{Route('courses-list')}}"><img src="static/assets/images/number-shape-polygon-mobile.svg" style="width: 20px; margin-right: 5px"/> </i> Manage Courses </a></li>
+                      <li class="{{Route::currentRouteName()=='courses-list' ? 'active' : ''}}"><a href="{{Route('courses-list')}}"><img src="{{ asset('static/assets/images/number-shape-polygon-mobile.svg') }}" style="width: 20px; margin-right: 5px"/> </i> Manage Courses </a></li>
                       @endif
                       @if($user_type == $teacher)
-                      <li class="{{Route::currentRouteName()=='courses-list' ? 'active' : ''}}"><a href="{{Route('courses-list')}}"><img src="static/assets/images/number-shape-polygon-mobile.svg" style="width: 20px; margin-right: 5px"/> </i> All Courses </a></li>
+                      <li class="{{Route::currentRouteName()=='courses-list' ? 'active' : ''}}"><a href="{{Route('courses-list')}}"><img src="{{ asset('static/assets/images/number-shape-polygon-mobile.svg') }}" style="width: 20px; margin-right: 5px"/> </i> All Courses </a></li>
                       @endif
                       @if($user_type == $admin)
-                          <li class="{{Route::currentRouteName()=='courses-listing-settings' ? 'active' : ''}}"><a href="{{ route('courses-listing-settings') }}"><img src="static/assets/images/persona-1-shape.svg" style="width: 20px; margin-right: 5px"/> </i> Popular Courses </a></li>
+                          <li class="{{Route::currentRouteName()=='courses-listing-settings' ? 'active' : ''}}"><a href="{{ route('courses-listing-settings') }}"><img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/> </i> Popular Courses </a></li>
                       @endif
                       @if($user_type == $teacher)
-                      <li class="{{Route::currentRouteName()=='my-courses-list' ? 'active' : ''}}"><a href="{{Route('my-courses-list')}}"><img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/> My Courses </a></li> 
+                      <li class="{{Route::currentRouteName()=='my-courses-list' ? 'active' : ''}}"><a href="{{Route('my-courses-list')}}"><img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/> My Courses </a></li> 
                       @endif
                      @if($user_type == $student)
-                      <li class="{{Route::currentRouteName()=='student-courses-list' ? 'active' : ''}}"><a href="{{Route('student-courses-list')}}"><img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/></i>  Courses </a></li>
-                      <li class="{{Route::currentRouteName()=='logged-student-courses-list' ? 'active' : ''}}"><a href="{{ route('logged-student-courses-list') }}"><img src="static/assets/images/flower.svg" style="width: 20px; margin-right: 5px"/></i> My Courses </a></li>
+                      <li class="{{Route::currentRouteName()=='student-courses-list' ? 'active' : ''}}"><a href="{{Route('student-courses-list')}}"><img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/></i>  Courses </a></li>
+                      <li class="{{Route::currentRouteName()=='logged-student-courses-list' ? 'active' : ''}}"><a href="{{ route('logged-student-courses-list') }}"><img src="{{ asset('static/assets/images/flower.svg') }}" style="width: 20px; margin-right: 5px"/></i> My Courses </a></li>
                      @endif
                       </ul>
                  </li>
@@ -73,7 +73,7 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                 <li>
                     <a><i class="fa fa-file-text-o"></i> Course Lessons <span class="fa fa-chevron-down"></span></a> 
                     <ul class="nav child_menu">
-                        <li class="{{Route::currentRouteName()=='course-lessons-list' ? 'active' : ''}}"><a href="{{Route('course-lessons-list')}}"><img src="static/assets/images/number-shape-sun-mobile.svg" style="width: 20px; margin-right: 5px"/> Lessons List </a></li>
+                        <li class="{{Route::currentRouteName()=='course-lessons-list' ? 'active' : ''}}"><a href="{{Route('course-lessons-list')}}"><img src="{{ asset('static/assets/images/number-shape-sun-mobile.svg') }}"  style="width: 20px; margin-right: 5px"/> Lessons List </a></li>
                     </ul>
                 </li>
                     @endif
@@ -92,9 +92,9 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                     <a><i class="fa fa-sticky-note"></i> Exam <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         @if($user_type == $teacher)
-                        <li class="{{Route::currentRouteName()=='getExamListPage' ? 'active' : ''}}"><a href="{{ route('getExamListPage') }}"><img src="static/assets/images/number-shape-polygon-mobile.svg" style="width: 20px; margin-right: 5px"/> List of Exams </a></li>
-                        <li class="{{Route::currentRouteName()=='getExamCreatePage' ? 'active' : ''}}"><a href="{{ route('getExamCreatePage') }}"><img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/> Create Exam </a></li>
-                        <li class="{{Route::currentRouteName()=='getStudentExamSubmissionsByCourse' ? 'active' : ''}}"><a href="{{ route('getStudentExamSubmissionsByCourse') }}"><img src="static/assets/images/flower.svg" style="width: 20px; margin-right: 5px"/> Submissions </a></li>
+                        <li class="{{Route::currentRouteName()=='getExamListPage' ? 'active' : ''}}"><a href="{{ route('getExamListPage') }}"><img src="{{ asset('static/assets/images/number-shape-polygon-mobile.svg') }}" style="width: 20px; margin-right: 5px"/> List of Exams </a></li>
+                        <li class="{{Route::currentRouteName()=='getExamCreatePage' ? 'active' : ''}}"><a href="{{ route('getExamCreatePage') }}"><img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/> Create Exam </a></li>
+                        <li class="{{Route::currentRouteName()=='getStudentExamSubmissionsByCourse' ? 'active' : ''}}"><a href="{{ route('getStudentExamSubmissionsByCourse') }}"><img src="{{ asset('static/assets/images/flower.svg') }}" style="width: 20px; margin-right: 5px"/> Submissions </a></li>
                         @endif
                     </ul>
                 </li>
