@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Courses Listing Settings')
+@section('title', 'KaleidoLearn | Trending Courses')
 
 <!-- page content -->
 @section('content')

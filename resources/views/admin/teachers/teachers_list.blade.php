@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Teacher List')
+@section('title', 'KaleidoLearn | Manage Teachers')
 
 <!-- page content -->
 @section('content')
@@ -33,7 +33,7 @@
                         <h2>All Teachers List</h2>
                         <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal"
                                 style="border-radius: 15px; background-color: #f05227; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
-                            <img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/> Add Teacher
+                            <img src="static/assets/images/flower.svg" style="width: 20px; margin-right: 5px"/> Add Teacher
                         </button>
                         <div class="clearfix"></div>
                     </div>
@@ -49,7 +49,7 @@
                         <?php $index = 0; ?>
                         <table class="table table-striped table-bordered dataTable no-footer" id="data" style="border-radius: 10px;">
                             <thead>
-                            <tr style="background: #0d5a33; color: #fff;">
+                            <tr style="background: #f49fc1; color: #fff;">
                                 <th>Teacher ID</th>
                                 <th>Picture</th>
                                 <th>Name</th>
@@ -67,15 +67,15 @@
                                     <td>{{ $teacher->email }}</td>
                                     <td>{{ $teacher->iso.$teacher->phone }}</td>
                                     <td class="text-center">
-                                        <button type="button"
+                                        <button type="button" style="border-radius: 5px; background-color: #f9c130; "
                                                 data-id="{{ $teacher->user_id }}"
                                                 data-name="{{ $teacher->name }}"
                                                 data-email="{{ $teacher->email }}"
                                                 data class="btn btn-info btn-sm" data-toggle="modal" data-target="#updateModal">
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
-                                      <a href="{{route('teachers-delete', ['id'=>$teacher->user_id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
-                                      <a href="{{route('teachers-courses', ['id'=>$teacher->user_id])}}"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-list" aria-hidden="true"></i> Show Courses</button></a>
+                                      <a href="{{route('teachers-delete', ['id'=>$teacher->user_id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm"  style="border-radius: 5px; background-color: #e23506"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                      <a href="{{route('teachers-courses', ['id'=>$teacher->user_id])}}"><button type="button" class="btn btn-info btn-sm" style="border-radius: 5px; background-color: #2172b9"><i class="fa fa-list" aria-hidden="true"></i> Show Courses</button></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -91,12 +91,12 @@
 
     </div>
     <!--Update Modal -->
-        <div class="modal fade" id="updateModal" role="dialog">
-            <div class="modal-dialog">
+        <div class="modal fade" id="updateModal" role="dialog" style="top:20%">
+            <div class="modal-dialog" style="background-color:#f49fc1; border-radius: 10px;">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header"  style="background-color: #f49fc1; color: #fff; ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Update Info</h4>
                     </div>
@@ -109,24 +109,22 @@
                                     <tr>
                                         <td colspan="2"><label>Name</label></td>
                                         <td colspan="2">
-                                            <input type="text" name="name" class="form-control" id="modal_name" >
+                                            <input type="text" name="name" class="form-control" id="modal_name" style="border-radius: 10px;">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2"><label>Email</label></td>
                                         <td colspan="2">
-                                            <input type="text" name="email" class="form-control" id="modal_email" >
+                                            <input type="text" name="email" class="form-control" id="modal_email"  style="border-radius: 10px;">
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-
-
-                            <button type="submit" class="btn btn-default pull-right">Update</button>
                     </div>
                     </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer"  style="background-color:rgb(255, 255, 255);">
+                        <button type="submit" class="btn btn-default pull-right" style="background-color: #f49fc1; color: #fff; border-radius: 10px;">Update</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
                     </div>
 
                 </div>
@@ -136,14 +134,14 @@
     {{--Update Modal End--}}
 
     <!--Add Modal -->
-        <div class="modal fade" id="addModal" role="dialog">
-            <div class="modal-dialog">
+        <div class="modal fade" id="addModal" role="dialog" style="top:20%" >
+            <div class="modal-dialog" style="background-color: #f49fc1; border-radius: 10px;">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header" style="background-color: #f49fc1; color: #fff; ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Info</h4>
+                        <h4 class="modal-title">Add Teacher</h4>
                     </div>
                     <form action="{{ route('teachers-add') }}" method="post">
                     <div class="modal-body">
@@ -171,11 +169,11 @@
 
                                 </table>
                             </div>
-                            <button type="submit" class="btn btn-default pull-right">Submit</button>
                     </div>
                     </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer" style="background-color:rgb(255, 255, 255);">
+                        <button type="submit" class="btn btn-default pull-right" style="background-color:#f49fc1; color: #fff; border-radius: 10px;">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
                     </div>
 
                 </div>

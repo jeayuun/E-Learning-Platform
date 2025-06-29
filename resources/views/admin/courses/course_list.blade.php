@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Courses List')
+@section('title', 'KaleidoLearn | Manage Courses')
 
 <!-- page content -->
 @section('content')
@@ -31,9 +31,10 @@
                 <div class="x_panel">
 
                     <div class="x_title">
-                        <h2>Courses List</h2>
-                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal">
-                            <i class="fa fa-plus"></i>
+                        <h2>All Courses List</h2>
+                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal"
+                                style="border-radius: 15px; background-color: #19588e; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
+                            <img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/> 
                             @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
                                 Add Course
                             @else
@@ -48,17 +49,17 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong> No Data Found.
+                                <strong>Sorry!</strong> No Course Data Found.
                             </div>
                         @else
                         <?php $index = 0; ?>
-                        <table class="table table-striped table-bordered dataTable no-footer" id="data">
-                            <thead>
+                        <table class="table table-striped table-bordered dataTable no-footer" id="data" style="border-radius: 10px;">
+                            <thead style="background: #19588e; color: #fff;">
                             <tr>
-                                <th>SL</th>
-                                <th>Department</th>
+                                <th>Course ID</th>
+                                <th>Subject</th>
                                 <th>Title</th>
-                                <th>Short Code</th>
+                                <th>Course Code</th>
                                 <th>Status</th>
                                 @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
                                 <th>Action</th>
@@ -85,7 +86,7 @@
                                     </td>
                                     @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
                                     <td class="text-center">
-                                        <button type="button"
+                                        <button type="button" style="border-radius: 5px; background-color: #f9c130; "
                                                 data-id="{{ $course->id }}"
                                                 data-department_id="{{ $course->department_id }}"
                                                 data-title="{{ $course->title }}"
@@ -97,7 +98,7 @@
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
 
-                                      <a href="{{route('courses-delete', ['id'=>$course->id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                      <a href="{{route('courses-delete', ['id'=>$course->id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm" style="border-radius: 5px; background-color: #e23506"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                     </td>
                                     @endif
                                 </tr>
@@ -115,11 +116,11 @@
     </div>
     <!--Update Modal -->
         <div class="modal fade" id="updateModal" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog" style="background-color: #19588e; border-radius: 10px;">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header" style="background-color: #19588e; color: #fff; ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Update Info</h4>
                     </div>
@@ -130,7 +131,7 @@
                                 <table class="table">
                                     <input type="hidden" name="modal_id" id="modal_id">
                                     <tr>
-                                        <td colspan="2"><label>Department</label></td>
+                                        <td colspan="2"><label>Subject</label></td>
                                         <td colspan="2">
                                             <select name="department" id="modal_department_id" required class="form-control">
                                                 @foreach($departments as $department)
@@ -146,7 +147,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2"><label>Short Code</label></td>
+                                        <td colspan="2"><label>Course Code</label></td>
                                         <td colspan="2">
                                             <input type="text" name="short_code" class="form-control" id="modal_short_code" >
                                         </td>
@@ -177,13 +178,11 @@
                                     </tr>
                                 </table>
                             </div>
-
-
-                            <button type="submit" class="btn btn-default pull-right">Update</button>
                     </div>
                     </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer"  style="background-color:rgb(255, 255, 255);">
+                        <button type="submit" class="btn btn-default pull-right" style="background-color: #19588e; color: #fff; border-radius: 10px;">Update</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
                     </div>
 
                 </div>
@@ -193,14 +192,14 @@
     {{--Update Modal End--}}
 
     <!--Add Modal -->
-        <div class="modal fade" id="addModal" role="dialog">
-            <div class="modal-dialog">
+        <div class="modal fade" id="addModal" role="dialog" style="top:20%">
+            <div class="modal-dialog" style="background-color: #19588e; border-radius: 10px;">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header" style="background-color: #19588e; color: #fff; ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Info</h4>
+                        <h4 class="modal-title">Add Course</h4>
                     </div>
                     <form action="{{ route('courses-add') }}" method="post" enctype='multipart/form-data'>
                     <div class="modal-body">
@@ -208,7 +207,7 @@
                                 <input type="hidden" name="_token" value="{{ Session::token() }}">
                                 <table class="table">
                                     <tr>
-                                        <td colspan="2"><label>Department</label></td>
+                                        <td colspan="2"><label>Subject</label></td>
                                         <td colspan="2">
                                             <select name="department" id="department" required class="form-control">
                                                 @foreach($departments as $department)
@@ -224,7 +223,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2"><label>Short Code</label></td>
+                                        <td colspan="2"><label>Course Code</label></td>
                                         <td colspan="2">
                                             <input type="text" name="short_code" class="form-control" id="short_code" >
                                         </td>
@@ -244,11 +243,11 @@
 
                                 </table>
                             </div>
-                            <button type="submit" class="btn btn-default pull-right">Submit</button>
                     </div>
                     </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer" style="background-color:rgb(255, 255, 255);">
+                        <button type="submit" class="btn btn-default pull-right" style="background-color:#19588e; color: #fff; border-radius: 10px;">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
                     </div>
 
                 </div>
