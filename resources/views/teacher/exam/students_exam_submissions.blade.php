@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title','Exam Submissions ')
+@section('title','KaleidoLearn | Exam Submissions ')
 
 <!-- page content -->
 @section('content')
@@ -36,7 +36,7 @@
                     <div class="x_content">
                         <form class="form-horizontal form-label-left" method="get" action="{{ route('getStudentExamSubmissionsByCourse') }}">
                             {{ csrf_field() }}
-                            <div class="col-md-4">
+                            <div class="col-md-8" style="margin-left: -120px;">
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12"> Course</label>
                                     <div class="col-md-8 col-sm-8 col-xs-12">
@@ -52,7 +52,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <button type="submit" class="btn btn-success btn-md">Show Exam Attempts</button>
+                                <button type="submit" class="btn btn-success btn-md" style="border-radius: 10px;">Show Exam Attempts</button>
                             </div>
                         </form>
                     </div>
@@ -62,7 +62,7 @@
                 <div class="x_panel">
 
                     <div class="x_title">
-                        <h2>Exam Attempts List</h2>
+                        <h2>List of Exam Submissions</h2>
                         <div class="clearfix"></div>
                     </div>
 
@@ -71,7 +71,7 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong> No Data Found.
+                                There are no exam submissions for this course.
                             </div>
                         @else
                         <?php $index = 0; ?>

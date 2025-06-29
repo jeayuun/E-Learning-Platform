@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'E-Learning')
+@section('title', 'KaleidoLearn | Judge Written Exam Submission')
 @section('content')
     <div class="right_col" role="main">
 
@@ -41,7 +41,7 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong>Something Wrong! No Written Question Data Found.
+                                There are no written questions available for this exam submission.
                             </div>
                         @else
                             <form method="post" action="{{ route('postWrittenQuestionAnswersWithJudgement') }}">
@@ -55,7 +55,7 @@
                                 {{ csrf_field() }}
                                 <table class="table table-bordered">
                                     <thead>
-                                        <th>Sl.</th>
+                                        <th>No.</th>
                                         <th>Question and Answer</th>
                                         <th>Mark</th>
                                         <th>Given Mark</th>
@@ -82,7 +82,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <button class="btn btn-block btn-info btn-lg">Confirm and Submit Answers Judgement</button>
+                                <button class="btn btn-block btn-info btn-lg" style="border-radius: 10px;">Confirm and Submit Answers</button>
                             </form>
                         @endif
                     </div>

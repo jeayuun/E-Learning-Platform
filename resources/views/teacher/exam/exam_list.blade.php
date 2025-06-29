@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Exam List')
+@section('title', 'KaleidoLearn | Exam List')
 
         <!-- page content -->
 @section('content')
@@ -31,7 +31,7 @@
 
                     <div class="x_title">
                         <h2>Exam List</h2>
-                        <a href="{{ route('getExamCreatePage') }}" class="pull-right btn btn-info btn-sm">
+                        <a href="{{ route('getExamCreatePage') }}" class="pull-right btn btn-info btn-sm"  style="border-radius: 10px;">
                             <i class="fa fa-plus"></i> Create new exam
                         </a>
                         <div class="clearfix"></div>
@@ -42,14 +42,14 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong> No Exam Data Found.
+                                You have not created any exam yet.
                             </div>
                         @else
                             <?php $index = 0; ?>
                             <table class="table table-striped table-bordered dataTable no-footer" id="data">
                                 <thead>
                                 <tr>
-                                    <th>SL</th>
+                                    <th>No</th>
                                     <th>Title</th>
                                     <th>Course</th>
                                     <th>Question File</th>

@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Question File List')
+@section('title', 'KaleidoLearn | Question File List')
 
 <!-- page content -->
 @section('content')
@@ -35,7 +35,7 @@
 
                     <div class="x_content">
                         <form class="form-horizontal form-label-left" method="get" action="{{ route('getAllQuestionFiles') }}">
-                            <div class="col-md-4">
+                            <div class="col-md-8" style="margin-left: -120px;">
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12"> Course</label>
                                     <div class="col-md-8 col-sm-8 col-xs-12">
@@ -52,7 +52,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <button type="submit" class="btn btn-success btn-md">Show Lessons</button>
+                                <button type="submit" class="btn btn-success btn-md" style="border-radius: 10px;">View Lessons</button>
                             </div>
                         </form>
                     </div>
@@ -63,7 +63,7 @@
 
                     <div class="x_title">
                         <h2>Question File List</h2>
-                        <a href="{{ route('question-make') }}" class="pull-right btn btn-info btn-sm">
+                        <a href="{{ route('question-make') }}" class="pull-right btn btn-info btn-sm"  style="border-radius: 10px;">
                             <i class="fa fa-plus"></i> Generate New Question File
                         </a>
                         <div class="clearfix"></div>
@@ -74,7 +74,7 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong> No Data Found.
+                                No Data Found.
                             </div>
                         @else
                         <?php $index = 0; ?>

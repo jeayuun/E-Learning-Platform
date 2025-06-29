@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'E-Learning')
+@section('title', 'KaleidoLearn | Lesson Details')
 @section('page_css')
     <style>
         .max-three-line-p{

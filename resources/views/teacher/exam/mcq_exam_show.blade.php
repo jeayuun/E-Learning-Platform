@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'E-Learning')
+@section('title', 'KaleidoLearn | View MCQ Exam Submission')
 @section('content')
    <div class="right_col" role="main">
 
@@ -36,7 +36,7 @@
                      <div class="alert alert-dismissible fade in alert-info" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>
-                        <strong>Sorry !</strong>Something Wrong! No Mcq Question Data Found.
+                        There are no mcq questions available for this exam submission.
                      </div>
                   @else
                      {{--<form method="post" action="{{ route('postMcqQuestionAnswers') }}">--}}
@@ -48,7 +48,7 @@
                         {{--{{ csrf_field() }}--}}
                         <table class="table table-bordered">
                            <thead>
-                           <th>Sl.</th>
+                           <th>No.</th>
                            <th>Mcq and Answer</th>
                            <th>Mark</th>
                            <th>Achieved Mark</th>

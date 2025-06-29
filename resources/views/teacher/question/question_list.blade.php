@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Question List')
+@section('title', 'KaleidoLearn | View Questions List')
 <!-- page content -->
 @section('content')
 
@@ -26,7 +26,7 @@
 
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Filter Your Questions</h2>
+                            <h2>Filter Questions</h2>
                             <div class="clearfix"></div>
                         </div>
 
@@ -74,14 +74,14 @@
                                 <div class="alert alert-dismissible fade in alert-info" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                     </button>
-                                    <strong>Sorry !</strong> No Written Question Found.
+                                    There are no Written Questions.
                                 </div>
                             @else
                                 <?php $index = 0; ?>
                                 <table class="table table-striped table-bordered dataTable no-footer" id="data">
                                     <thead>
                                     <tr>
-                                        <th>SL</th>
+                                        <th>No</th>
                                         <th>Lesson</th>
                                         <th>Part Number</th>
                                         <th>Question</th>
@@ -119,14 +119,14 @@
                                 <div class="alert alert-dismissible fade in alert-info" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                     </button>
-                                    <strong>Sorry !</strong> No Mcq Question Found.
+                                    There are no MCQ Questions.
                                 </div>
                             @else
                                 <?php $index = 0; ?>
                                 <table class="table table-striped table-bordered dataTable no-footer" id="data">
                                     <thead>
                                     <tr>
-                                        <th>SL</th>
+                                        <th>No</th>
                                         <th>Lesson</th>
                                         <th>Part</th>
                                         <th>Question</th>

@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Lessons List')
+@section('title', 'KaleidoLearn | Lessons List')
 
 <!-- page content -->
 @section('content')
@@ -37,14 +37,14 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong> No Data Found.
+                                There's no lesson uploaded yet.
                             </div>
                         @else
                         <?php $index = 0; ?>
                         <table class="table table-striped table-bordered dataTable no-footer" id="data">
                             <thead>
                             <tr>
-                                <th>SL</th>
+                                <th>No</th>
                                 <th>Lesson No </th>
                                 <th>Title</th>
                             </tr>

@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Students List')
+@section('title', 'KaleidoLearn | Students List')
 
         <!-- page content -->
 @section('content')
@@ -37,14 +37,14 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong> No Data Found.
+                                You currently have no student.
                             </div>
                         @else
                             <?php $index = 0; ?>
                             <table class="table table-striped table-bordered dataTable no-footer" id="data">
                                 <thead>
-                                <tr>
-                                    <th>SL</th>
+                                <tr style="background:rgb(43, 57, 141); color: #fff;">
+                                    <th>No.</th>
                                     <th>Student ID</th>
                                     <th>Name</th>
                                     <th>Course</th>
@@ -68,7 +68,7 @@
                                         @endif
                                         </td>
                                         <td class="text-center">
-                                            <button type="button"
+                                            <button type="button"  style="border-radius: 5px; background-color: #368c60 "
                                                     data-course_id="{{ $student['teacher_course']['course_id'] }}"
                                                     data-teacher_id="{{ $student['teacher_course']['teacher_id'] }}"
                                                     data-student_id="{{ $student['student']['user_id'] }}"
@@ -78,7 +78,7 @@
                                          </td>
                                         <td>
 
-                                            <button type="button"
+                                            <button type="button" style="border-radius: 5px; background-color: #2172b9"
                                                     data-teacher_course_id="{{ $student['teacher_course_id'] }}"
                                                     data-course_id="{{ $student['teacher_course']['course_id'] }}"
                                                     data-teacher_id="{{ $student['teacher_course']['teacher_id'] }}"

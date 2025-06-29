@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Lessons List')
+@section('title', 'KaleidoLearn | Lessons List')
 
 <!-- page content -->
 @section('content')
@@ -34,11 +34,11 @@
 
                     <div class="x_content">
                         <form class="form-horizontal form-label-left" method="get" action="{{ route('course-lessons-list') }}">
-                            <div class="col-md-4">
+                            <div class="col-md-8" style="margin-left: -120px;">
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12"> Course</label>
                                     <div class="col-md-8 col-sm-8 col-xs-12">
-                                        {{--<input type="hidden" id="token" name="_token" value="{{ Session::token() }}">--}}
+                                        {{--<input type="hidden" id="token" name="_token" value="{{ Session::token() }}" style="width: 100%;">--}}
                                         <select name="course_id" id="course_id" class="select2_single form-control" tabindex="-1" >
                                             <option></option>
                                             @if($courses)
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <button type="submit" class="btn btn-success btn-md">Show Lessons</button>
+                                <button type="submit" class="btn btn-success btn-md" style="border-radius: 10px;">View Lessons</button>
                             </div>
                         </form>
                     </div>
@@ -62,8 +62,8 @@
 
                     <div class="x_title">
                         <h2>Lessons List</h2>
-                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal">
-                            <i class="fa fa-plus"></i> Add New Lesson
+                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal" style="border-radius: 15px; background-color: #f9c130; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
+                            <img src="static/assets/images/number-shape-sun-mobile.svg" style="width: 20px; margin-right: 5px"/> Add New Lesson
                         </button>
                         <div class="clearfix"></div>
                     </div>
@@ -73,15 +73,15 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry !</strong> No Data Found.
+                                No Data Found.
                             </div>
                         @else
                         <?php $index = 0; ?>
                         <table class="table table-striped table-bordered dataTable no-footer" id="data">
-                            <thead>
+                            <thead style="background: #187847; color: #fff;">
                             <tr>
-                                <th>SL</th>
-                                <th>Lesson No </th>
+                                <th>No.</th>
+                                <th>Lesson Number </th>
                                 <th>Title</th>
                                 <th>Action</th>
                             </tr>
@@ -97,7 +97,7 @@
                                     </td>
                                     <td>{{ $lesson->title }}</td>
                                     <td class="text-center">
-                                        <button type="button"
+                                        <button type="button"  style="border-radius: 5px; "
                                                 data-id="{{ $lesson->id }}"
                                                 data-number="{{ $lesson->number }}"
                                                 data-title="{{ $lesson->title }}"
@@ -105,8 +105,8 @@
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
 
-                                      <a href="{{route('lesson-delete', ['course_id' => $course_id,'id'=>$lesson->id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
-                                      <a href="{{route('getLessonDetails', ['id'=>$lesson->id])}}" title="Details"><button type="button" class="btn btn-primary btn-sm"> Details</button></a>
+                                      <a href="{{route('lesson-delete', ['course_id' => $course_id,'id'=>$lesson->id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm" style="border-radius: 5px; background-color: #e23506"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                      <a href="{{route('getLessonDetails', ['id'=>$lesson->id])}}" title="Details"><button type="button" class="btn btn-primary btn-sm" style="border-radius: 5px; background-color: #2172b9"> Details</button></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -122,14 +122,14 @@
 
     </div>
     <!--Update Modal -->
-        <div class="modal fade" id="updateModal" role="dialog">
-            <div class="modal-dialog">
+        <div class="modal fade" id="updateModal" role="dialog"  style="top:20%" >
+            <div class="modal-dialog" style="background-color: #187847; border-radius: 10px;">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header" style="background-color: #187847; color: #fff; ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Update Info</h4>
+                        <h4 class="modal-title">Update Details</h4>
                     </div>
                     <form action="{{ route('lesson-update') }}" method="post">
                     <div class="modal-body">
@@ -139,7 +139,7 @@
                                     <input type="hidden" name="modal_id" id="modal_id">
                                     <input type="hidden" name="course_id" value="<?php if(isset($course_id)) { echo $course_id; } ?>">
                                     <tr>
-                                        <td colspan="2"><label>number</label></td>
+                                        <td colspan="2"><label>Lesson Number</label></td>
                                         <td colspan="2">
                                             <input type="text" name="number" class="form-control" id="modal_number" >
                                         </td>
@@ -152,13 +152,11 @@
                                     </tr>
                                 </table>
                             </div>
-
-
-                            <button type="submit" class="btn btn-default pull-right">Update</button>
                     </div>
                     </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer"  style="background-color:rgb(255, 255, 255);">
+                        <button type="submit" class="btn btn-default pull-right" style="background-color: #187847; color: #fff; border-radius: 10px;">Update</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
                     </div>
 
                 </div>
@@ -168,14 +166,14 @@
     {{--Update Modal End--}}
 
     <!--Add Modal -->
-        <div class="modal fade" id="addModal" role="dialog">
-            <div class="modal-dialog">
+        <div class="modal fade" id="addModal" role="dialog"  style="top:20%" >
+            <div class="modal-dialog" style="background-color: #187847; border-radius: 10px;">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header" style="background-color: #187847; color: #fff; ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Info</h4>
+                        <h4 class="modal-title">Add Lesson</h4>
                     </div>
                     <form action="{{ route('lesson-add') }}" method="post">
                     <div class="modal-body">
@@ -184,7 +182,7 @@
                                 <input type="hidden" name="course_id" value="<?php if(isset($course_id)) { echo $course_id; } ?>">
                                 <table class="table">
                                     <tr>
-                                        <td colspan="2"><label>number</label></td>
+                                        <td colspan="2"><label>Lesson Number</label></td>
                                         <td colspan="2">
                                             <input type="text" name="number" class="form-control"  >
                                         </td>
@@ -198,11 +196,11 @@
 
                                 </table>
                             </div>
-                            <button type="submit" class="btn btn-default pull-right">Submit</button>
                     </div>
                     </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer"   style="background-color:rgb(255, 255, 255);">
+                        <button type="submit" class="btn btn-default pull-right" style="background-color: #187847; color: #fff; border-radius: 10px;">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
                     </div>
 
                 </div>

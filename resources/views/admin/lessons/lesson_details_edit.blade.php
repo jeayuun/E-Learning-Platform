@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Lesson Files List')
+@section('title', 'KaleidoLearn | Lesson Files List')
 
         <!-- page content -->
 @section('content')

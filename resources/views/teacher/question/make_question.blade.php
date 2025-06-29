@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'E-Learning')
+@section('title', 'KaleidoLearn | Create Question File')
 @section('page_css')
         <!-- Select2 -->
 <link href="{{ url('admin/vendors/select2/dist/css/select2.min.css') }}" rel="stylesheet">
@@ -145,7 +145,7 @@
                         @else
                             <table class="table">
                                 <thead>
-                                <th>SL.</th>
+                                <th>No.</th>
                                 <th>Question</th>
                                 <th>Options</th>
                                 <th>Mark</th>
