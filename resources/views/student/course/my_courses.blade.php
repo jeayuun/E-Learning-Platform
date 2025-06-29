@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'E-Learning | My Courses')
+@section('title', 'KaleidoLearn | My Courses')
 @section('content')
         <!-- page content -->
 <div class="right_col" role="main">

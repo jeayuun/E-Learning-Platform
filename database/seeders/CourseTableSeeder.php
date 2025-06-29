@@ -22,9 +22,9 @@ class CourseTableSeeder extends Seeder
             $data = [
                 [
                     'department_id' => $department1->id,
-                    'title' => 'ARCH 100 Architectural Foundations I',
+                    'title' => 'Advanced Alegbra',
                     'featured_image' => '/admin/images/courses/course_1.jpg',
-                    'short_code' => 'ARCH 100',
+                    'short_code' => 'MATH 010',
                     'featured_text' => 'An introductory design studio directed toward the development of spatial thinking and the skills necessary for the analysis and design of architectural space and form. This course is based on a series of exercises that include direct observation: drawing, analysis and representation of the surrounding world, and full-scale studies in the making of objects and the representation of object and space. Students are introduced to different descriptive and analytical media and techniques of representation to aid in the development of critical thought. These include freehand drawing, orthographic projection, paraline drawing, basic computer skills, and basic materials investigation. Prerequisite: Approval from the Dean of the School of Architecture and Urban Planning. LAB.',
                     'default_cost' => null,
                     'status' => \App\Libraries\Enumerations\CourseStatus::$APPROVED,
@@ -33,9 +33,9 @@ class CourseTableSeeder extends Seeder
                 ],
                 [
                     'department_id' => $department1->id,
-                    'title' => 'ARCH 104 Principles of Modern Architecture',
+                    'title' => 'Trigonometry',
                     'featured_image' => '/admin/images/courses/course_2.jpg',
-                    'short_code' => 'ARCH 104',
+                    'short_code' => 'MATH 004',
                     'featured_text' => 'A lecture course covering the emergence of technological, theoretical and aesthetic principles of modern design beginning with the socio-cultural impact of industrialization and the crisis in architecture at the end of the 19th century. Attention is given to functionalist theory, mechanical analogies and the so-called machine aesthetic of 1910-1930 and to the precedents of important design principles of modern architecture, including modular coordination, the open plan, interlocking universal space, unadorned geometry, structural integrity, programmatic and tectonic expression, efficiency and transparency and briefly explores their development in post-war and late 20th century examples. LEC.',
                     'default_cost' => null,
                     'status' => \App\Libraries\Enumerations\CourseStatus::$APPROVED,

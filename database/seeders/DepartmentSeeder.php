@@ -18,7 +18,7 @@ class DepartmentSeeder extends Seeder
         $model = Department::first();
         if (empty($model)) {
             $model = new Department();
-            $model->title = 'Department of Architecture';
+            $model->title = 'Mathematics';
             $model->short_code = 'ARC';
             $model->status = \App\Libraries\Enumerations\DepartmentStatus::$APPROVED;
             $model->created_at = date('Y-m-d H:i:s');
@@ -26,7 +26,7 @@ class DepartmentSeeder extends Seeder
             $model->save();
 
             $model = new Department();
-            $model->title = 'Department of History of Art';
+            $model->title = 'Business Administration';
             $model->short_code = 'HOA';
             $model->status = \App\Libraries\Enumerations\DepartmentStatus::$APPROVED;
             $model->created_at = date('Y-m-d H:i:s');
@@ -42,7 +42,7 @@ class DepartmentSeeder extends Seeder
             $model->save();
 
             $model = new Department();
-            $model->title = 'Civil engineering';
+            $model->title = 'Civil Engineering';
             $model->short_code = 'CE';
             $model->status = \App\Libraries\Enumerations\DepartmentStatus::$APPROVED;
             $model->created_at = date('Y-m-d H:i:s');

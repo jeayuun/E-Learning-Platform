@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'E-Learning | Courses')
+@section('title', 'KaleidoLearn | Courses')
 @section('content')
         <!-- page content -->
 <div class="right_col" role="main">
@@ -13,7 +13,7 @@
                 {!! Breadcrumbs::render('coursesForStudents') !!}
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Currently In Progress <small> Here's what you're currently working through. Get back to work! </small></h2>
+                        <h2>Currently In Progress <small> See what you're currently working on. </small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -57,7 +57,7 @@
             <div class="col-md-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Trending Courses <small> Here's what your peers are binging. </small></h2>
+                        <h2>Trending Courses <small> Check out the courses most popular with others. </small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -98,7 +98,7 @@
             <div class="col-md-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>All Courses <small> Here all the courses from our teachers. </small></h2>
+                        <h2>All Courses <small> Browse all available courses. </small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>

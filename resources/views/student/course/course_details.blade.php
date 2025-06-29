@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'E-Learning | Course Details')
+@section('title', 'KaleidoLearn | Course Details')
 @section('page_css')
     <link href="{{ url('admin/vendors/star-rating/css/star-rating.min.css') }}" rel="stylesheet">
     <!-- PNotify -->
@@ -12,7 +12,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>E-learning :: Course Details</h3>
+                <h3>Course Details</h3>
             </div>
         </div>
 

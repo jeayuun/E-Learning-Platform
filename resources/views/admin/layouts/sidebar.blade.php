@@ -53,8 +53,8 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                       <li class="{{Route::currentRouteName()=='my-courses-list' ? 'active' : ''}}"><a href="{{Route('my-courses-list')}}"><i class="fa fa-list-alt"></i> My Courses </a></li>
                       @endif
                      @if($user_type == $student)
-                      <li class="{{Route::currentRouteName()=='student-courses-list' ? 'active' : ''}}"><a href="{{Route('student-courses-list')}}"><i class="fa fa-list-alt"></i> Courses </a></li>
-                      <li class="{{Route::currentRouteName()=='logged-student-courses-list' ? 'active' : ''}}"><a href="{{ route('logged-student-courses-list') }}"><i class="fa fa-list-alt"></i> My Courses </a></li>
+                      <li class="{{Route::currentRouteName()=='student-courses-list' ? 'active' : ''}}"><a href="{{Route('student-courses-list')}}"><img src="static/assets/images/persona-1-shape-3.svg" style="width: 20px; margin-right: 5px"/></i>  Courses </a></li>
+                      <li class="{{Route::currentRouteName()=='logged-student-courses-list' ? 'active' : ''}}"><a href="{{ route('logged-student-courses-list') }}"><img src="static/assets/images/flower.svg" style="width: 20px; margin-right: 5px"/></i> My Courses </a></li>
                      @endif
                       </ul>
                  </li>

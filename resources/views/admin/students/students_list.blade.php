@@ -141,7 +141,7 @@
 
                     <div class="modal-header" style="background-color: #f9c130; color: #fff; ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Info</h4>
+                        <h4 class="modal-title">Add Student</h4>
                     </div>
                     <form action="{{ route('students-add') }}" method="post">
                     <div class="modal-body">
