@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Session;
 use App\Models\StudentCourse;
 use Illuminate\Support\Facades\Auth;
@@ -31,26 +32,26 @@ class StudentController extends Controller
             'email'     => 'required|email|unique:users|max:100',
         ]);
 
-        DB::transaction(function ($request) {
-            $user = new User();
-            $user->name = $request['name'];
-            $user->email = $request['email'];
-            $user->password =  bcrypt($request['password']);
-            $user->user_type = UserTypes::$STUDENT;
-            $user->save();
+  
+        $user = new User();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->password =  bcrypt($request['password']);
+        $user->user_type = UserTypes::$STUDENT;
+        $user->save();
 
-            $meta = new \App\Models\Student();
-            $meta->user_id = $user->id;
-            $meta->save();
+        $meta = new \App\Models\Student();
+        $meta->user_id = $user->id;
+        $meta->save();
 
-            Session::flash('Success Message', 'Student has been created successfully.');
-        });
-
+        Session::flash('Success Message', 'Student has been created successfully.');
         return redirect()->route('students-list');
+
+        
     }
 
 
-//    post Add or Edit Student
+    // post Add or Edit Student
     public function update(Request $request){
         $this->validate($request,[
             'name'      => 'required|min:3|max:100',

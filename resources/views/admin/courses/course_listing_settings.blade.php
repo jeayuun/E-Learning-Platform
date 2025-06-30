@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'KaleidoLearn | Trending Courses')
+@section('title', 'KaleidoLearn | Featured Courses')
 
 <!-- page content -->
 @section('content')
@@ -29,9 +29,9 @@
                 <div class="x_panel">
 
                     <div class="x_title">
-                        <h2>Trending Courses List</h2>
+                        <h2>Featured Courses List</h2>
                         <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal">
-                            <i class="fa fa-plus"></i>Add Trending Course
+                            <i class="fa fa-plus"></i>Add Featured Course
                         </button>
                         <div class="clearfix"></div>
                     </div>
@@ -48,7 +48,7 @@
                         <table class="table table-striped table-bordered dataTable no-footer" id="data">
                             <thead>
                             <tr>
-                                <th>SL</th>
+                                <th>No</th>
                                 <th>Title</th>
                                 <th>Added at</th>
                                 <th>Action</th>
@@ -85,7 +85,7 @@
 
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Info</h4>
+                        <h4 class="modal-title">Add Featured Course</h4>
                     </div>
                     <form action="{{ route('trending-courses-add') }}" method="post" enctype='multipart/form-data'>
                     <div class="modal-body">
@@ -97,7 +97,7 @@
                                         <td colspan="2">
                                             <select name="course" required class="form-control">
                                                 @foreach($teacherCourses as $teacherCourse)
-                                                    <option value="{{ $teacherCourse->id }}">{{ $teacherCourse->course->title }} - {{ $teacherCourse->teacher->user->name }}</option>
+                                                    <option value="{{ $teacherCourse->id }}">{{ $teacherCourse->course->title }}</option>
                                                 @endforeach
                                             </select>
                                         </td>

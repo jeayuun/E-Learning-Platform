@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'KaleidoLearn | My Courses List')
+@section('title', 'My Courses List')
 
 <!-- page content -->
 @section('content')
@@ -29,9 +29,8 @@
 
                     <div class="x_title">
                         <h2>My Courses List</h2>
-                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal"
-                        style="border-radius: 15px; background-color: #f05227; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
-                            <img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/>Add New Course
+                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal">
+                            <i class="fa fa-plus"></i> Attach New Course
                         </button>
                         <div class="clearfix"></div>
                     </div>
@@ -41,17 +40,17 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                You do not handle any courses.
+                                <strong>Sorry !</strong> No Data Found.
                             </div>
                         @else
                         <?php $index = 0; ?>
-                        <table class="table table-striped table-bordered dataTable no-footer" id="data" style="border-radius: 10px;">
-                            <thead style="background: #f9c130; color: #fff;">
+                        <table class="table table-striped table-bordered dataTable no-footer" id="data">
+                            <thead>
                             <tr>
-                                <th>No.</th>
+                                <th>SL</th>
                                 <th>Course Title</th>
-                                <th>Course Code</th>
-                                <th>Date Added</th>
+                                <th>Short Code</th>
+                                <th>Attached Date</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -63,7 +62,7 @@
                                     <td>{{ $t_course->course_short_code }}</td>
                                     <td>{{ $t_course->created_at }}</td>
                                     <td class="text-center">
-                                      <a href="{{route('my-courses-delete', ['id'=>$t_course->id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm" style="border-radius: 5px; background-color: #e23506"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                      <a href="{{route('my-courses-delete', ['id'=>$t_course->id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -80,14 +79,14 @@
     </div>
 
     <!--Add Modal -->
-        <div class="modal fade" id="addModal" role="dialog" style="top:20%" >
-            <div class="modal-dialog" style="background-color: #f9c130; border-radius: 10px;">
+        <div class="modal fade" id="addModal" role="dialog">
+            <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header" style="background-color: #f9c130; color: #fff; ">
+                    <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add New Course</h4>
+                        <h4 class="modal-title">Add Info</h4>
                     </div>
                     <form action="{{ route('my-courses-add') }}" method="post">
                     <div class="modal-body">
@@ -106,11 +105,11 @@
                                     </tr>
                                 </table>
                             </div>
+                            <button type="submit" class="btn btn-default pull-right">Submit</button>
                     </div>
                     </form>
-                    <div class="modal-footer" style="background-color:rgb(255, 255, 255);">
-                            <button type="submit" class="btn btn-default pull-right" style="background-color:#f9c130; color: #fff; border-radius: 10px;">Submit</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
 
                 </div>

@@ -58,7 +58,7 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                       <li class="{{Route::currentRouteName()=='courses-list' ? 'active' : ''}}"><a href="{{Route('courses-list')}}"><img src="{{ asset('static/assets/images/number-shape-polygon-mobile.svg') }}" style="width: 20px; margin-right: 5px"/> </i> All Courses </a></li>
                       @endif
                       @if($user_type == $admin)
-                          <li class="{{Route::currentRouteName()=='courses-listing-settings' ? 'active' : ''}}"><a href="{{ route('courses-listing-settings') }}"><img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/> </i> Popular Courses </a></li>
+                          <li class="{{Route::currentRouteName()=='courses-listing-settings' ? 'active' : ''}}"><a href="{{ route('courses-listing-settings') }}"><img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/> </i> Featured Courses </a></li>
                       @endif
                       @if($user_type == $teacher)
                       <li class="{{Route::currentRouteName()=='my-courses-list' ? 'active' : ''}}"><a href="{{Route('my-courses-list')}}"><img src="{{ asset('static/assets/images/persona-1-shape-3.svg') }}" style="width: 20px; margin-right: 5px"/> My Courses </a></li> 
@@ -109,6 +109,7 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                 body {
                     background-color: #F5F7FA; 
                     font-family: 'Poppins', sans-serif;
+                    cursor: default !important;
                 }
 
                 .main_menu_side {
@@ -155,7 +156,6 @@ $admin = \App\Libraries\Enumerations\UserTypes::$ADMIN;
                     margin: 0;
                     padding-left: 10px;
                     padding-right: 10px;
-                    position: fixed;
                 }
 
                 .side-menu > li:hover {

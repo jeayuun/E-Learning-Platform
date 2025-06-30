@@ -17,6 +17,7 @@ use App\Models\Teacher;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
@@ -39,20 +40,20 @@ class TeacherController extends Controller
             'email'     => 'required|email|unique:users|max:100',
         ]);
 
-        DB::transaction(function ($request) {
-            $user = new User();
-            $user->name = $request['name'];
-            $user->email = $request['email'];
-            $user->password =  bcrypt($request['password']);
-            $user->user_type = UserTypes::$TEACHER;
-            $user->save();
+    
+        $user = new User();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->password =  bcrypt($request['password']);
+        $user->user_type = UserTypes::$TEACHER;
+        $user->save();
 
-            $meta = new \App\Models\Teacher();
-            $meta->user_id = $user->id;
-            $meta->save();
+        $meta = new \App\Models\Teacher();
+        $meta->user_id = $user->id;
+        $meta->save();
 
-            Session::flash('Success Message', 'Teacher has been created successfully.');
-        });
+        Session::flash('Success Message', 'Teacher has been created successfully.');
+        
 
         return redirect()->route('teachers-list');
     }

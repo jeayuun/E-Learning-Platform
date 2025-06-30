@@ -57,7 +57,7 @@
             <div class="col-md-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Trending Courses <small> Check out the courses most popular with others. </small></h2>
+                        <h2>Featured Courses <small> Check out the courses most popular with others. </small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -79,7 +79,7 @@
                                         </div>
                                         <a href="{{ route('student-course-details',['teacher_course_id' => $tCourse->teacher_course->id]) }}">
                                         <div class="caption">
-                                           <p>{{ $tCourse->teacher_course->course->title }} ( {{ $tCourse->teacher_course->teacher->user->name }} )</p>
+                                           <p>{{ $tCourse->teacher_course->course->title }}</p>
                                         </div>
                                         </a>
                                     </div>
@@ -121,9 +121,9 @@
                                     </div>
                                     <a href="{{ route('student-course-details',['teacher_course_id' => $aCourse->id]) }}">
                                     <div class="caption">
-                                        <p>{{ $aCourse->course->title }} ( by {{ $aCourse->teacher->user->name }} )</p>
+                                        <p>{{ $tCourse->teacher_course->course->title }}</p>
                                     </div>
-                                    </a>
+                                    </a>    
                                 </div>
                             </div>
                             @endforeach

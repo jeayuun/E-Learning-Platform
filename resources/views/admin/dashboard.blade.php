@@ -21,7 +21,7 @@
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12" >
             <div class="tile-stats"  style="background:rgb(243, 255, 240); border: 3px solid rgb(218, 233, 214);">
                 <div class="icon"><i class="fas fa-chalkboard-teacher" style="color: green;"></i></i></div>
-                <div class="count" style="color: green;">{{ $totalTeachers or 0 }}</div>
+                <div class="count" style="color: green;">{{ $totalTeachers ?? 'N/A' }}</div>
                 <h3 style="color: green;">Teachers</h3>
                 <img src="{{ asset('static/assets/images/green-overlay.svg') }}" alt="Teachers Image" class="tile-image">
             </div>
@@ -30,7 +30,7 @@
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="tile-stats" style="background:rgb(255, 240, 246); border: 3px solid rgb(252, 208, 226);">
                 <div class="icon"><i class="fa fa-users"  style="color: #f5a0c2;"></i></div>
-                <div class="count" style="color: rgb(246, 142, 184)">{{ $totalStudents or 0 }}</div>
+                <div class="count" style="color: rgb(246, 142, 184)">{{ $totalStudents ?? 'N/A' }}</div>
                 <h3 style="color:rgb(246, 142, 184);">Students</h3>
                 <img src="{{ asset('static/assets/images/pink-overlay.svg') }}" alt="Teachers Image" class="tile-image">
             </div>
@@ -39,7 +39,7 @@
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="tile-stats" style="background:rgb(243, 240, 255); border: 3px solid rgb(192, 210, 227);">
                 <div class="icon"><i class="fa fa-book"  style="color: #2172b9;"></i></div>
-                <div class="count" style="color:rgb(14, 82, 141)">{{ $totalCourses or 0 }}</div>
+                <div class="count" style="color:rgb(14, 82, 141)">{{ $totalCourses ?? 'N/A' }}</div>
                 <h3 style="color: rgb(14, 82, 141)">Courses</h3>
                 <img src="{{ asset('static/assets/images/blue-overlay.svg') }}" alt="Blue Image" class="tile-image">
             </div>
@@ -48,7 +48,7 @@
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="tile-stats" style="background:rgb(254, 255, 240); border: 3px solid rgb(254, 236, 193);">
                 <div class="icon"><i class="fa fa-graduation-cap"  style="color: #f9c130;"></i></div>
-                <div class="count" style="color: #f9c130;">{{ $totalCertified or 0}}</div>
+                <div class="count" style="color: #f9c130;">{{ $totalCertified ?? 'N/A' }}</div>
                 <h3 style="color: #f9c130;">Certified Students</h3>
                 <img src="{{ asset('static/assets/images/yellow-overlay.svg') }}" alt="Pink Image" class="tile-image">
             </div>

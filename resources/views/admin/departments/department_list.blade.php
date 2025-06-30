@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'KaleidoLearn | Subjects')
+@section('title', 'KaleidoLearn | Manage Subjects')
 
 <!-- page content -->
 @section('content')
@@ -29,9 +29,8 @@
 
                     <div class="x_title">
                         <h2>Subjects List</h2>
-                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal"
-                                style="border-radius: 15px; background-color: #f9c130; padding: 10x 15px; font-size: 15px; color: #fff; border: none;">
-                            <img src="{{ asset('static/assets/images/flower-center2.svg') }}" style="width: 20px; margin-right: 5px"/>  @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
+                        <button type="button" class="pull-right btn btn-info btn-sm" data-toggle="modal" data-target="#addModal">
+                            <i class="fa fa-plus"></i> @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
                                                             Add Subject
                                                        @else
                                                            Request new subject
@@ -45,16 +44,16 @@
                             <div class="alert alert-dismissible fade in alert-info" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
-                                <strong>Sorry!</strong> No Data Found.
+                                <strong>Sorry !</strong> No Data Found.
                             </div>
                         @else
                         <?php $index = 0; ?>
-                        <table class="table table-striped table-bordered dataTable no-footer" id="data" style="border-radius: 10px;">
-                            <thead style="background: #f05227; color: #fff;">
+                        <table class="table table-striped table-bordered dataTable no-footer" id="data">
+                            <thead>
                             <tr>
                                 <th>Subject ID</th>
                                 <th>Title</th>
-                                <th>Subject Code</th>
+                                <th>Short Code</th>
                                 <th>Status</th>
                                 @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
                                 <th>Action</th>
@@ -80,7 +79,7 @@
                                     </td>
                                     @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Libraries\Enumerations\UserTypes::$ADMIN)
                                     <td class="text-center">
-                                        <button type="button" style="border-radius: 5px; background-color: #2172b9; "
+                                        <button type="button"
                                                 data-id="{{ $department->id }}"
                                                 data-title="{{ $department->title }}"
                                                 data-short_code="{{ $department->short_code }}"
@@ -89,7 +88,7 @@
                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         </button>
 
-                                      <a href="{{route('departments-delete', ['id'=>$department->id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm" style="border-radius: 5px; background-color: #e23506"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                      <a href="{{route('departments-delete', ['id'=>$department->id])}}" class="delete" title="Delete"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                     </td>
                                     @endif
                                 </tr>
@@ -106,14 +105,14 @@
 
     </div>
     <!--Update Modal -->
-        <div class="modal fade" id="updateModal" role="dialog"  style="top:20%">
-            <div class="modal-dialog" style="background-color: #f05227; border-radius: 10px;">
+        <div class="modal fade" id="updateModal" role="dialog">
+            <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header" style="background-color: #f05227; color: #fff; ">
+                    <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Update Info</h4>
+                        <h4 class="modal-title">Update Subject</h4>
                     </div>
                     <form action="{{ route('departments-update') }}" method="post">
                     <div class="modal-body">
@@ -145,11 +144,13 @@
                                     </tr>
                                 </table>
                             </div>
+
+
+                            <button type="submit" class="btn btn-default pull-right">Update</button>
                     </div>
                     </form>
-                    <div class="modal-footer" style="background-color:rgb(255, 255, 255);">
-                        <button type="submit" class="btn btn-default pull-right" style="background-color: #f05227; color: #fff; border-radius: 10px;">Update</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
 
                 </div>
@@ -159,12 +160,12 @@
     {{--Update Modal End--}}
 
     <!--Add Modal -->
-        <div class="modal fade" id="addModal" role="dialog"  style="top:20%" >
-            <div class="modal-dialog" style="background-color: #f05227; border-radius: 10px;">
+        <div class="modal fade" id="addModal" role="dialog">
+            <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <div class="modal-header" style="background-color: #f05227; color: #fff; ">
+                    <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Add Subject</h4>
                     </div>
@@ -180,18 +181,18 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2"><label>Subject Code</label></td>
+                                        <td colspan="2"><label>Short Code</label></td>
                                         <td colspan="2">
                                             <input type="text" name="short_code" class="form-control" id="short_code" >
                                         </td>
                                     </tr>
                                 </table>
                             </div>
+                            <button type="submit" class="btn btn-default pull-right">Submit</button>
                     </div>
                     </form>
-                    <div class="modal-footer" style="background-color:rgb(255, 255, 255);">
-                        <button type="submit" class="btn btn-default pull-right" style="background-color: #f05227; color: #fff; border-radius: 10px;">Submit</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 10px;">Close</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
 
                 </div>
