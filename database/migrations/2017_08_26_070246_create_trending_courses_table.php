@@ -14,7 +14,7 @@ class CreateTrendingCoursesTable extends Migration
     public function up()
     {
         Schema::create('trending_courses', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->integer('teacher_course_id')->unique();
             $table->timestamps();
         });

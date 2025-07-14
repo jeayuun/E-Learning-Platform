@@ -14,7 +14,7 @@ class CreateTeacherCourseLessonsTable extends Migration
     public function up()
     {
         Schema::create('teacher_course_lessons', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->integer('course_id');
             $table->integer('teacher_id');
             $table->integer('number');

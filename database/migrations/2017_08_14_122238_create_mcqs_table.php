@@ -14,7 +14,7 @@ class CreateMcqsTable extends Migration
     public function up()
     {
         Schema::create('mcqs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->integer('lesson_id');
             $table->string('part_number');
             $table->text('question');
@@ -24,7 +24,7 @@ class CreateMcqsTable extends Migration
             $table->text('option_4')->nullable();
             $table->tinyInteger('right_answer');
             $table->text('description')->nullable();
-            $table->double('default_mark',5,3)->default(0.00);
+            $table->double('default_mark', 5, 3)->default(0.00);
             $table->timestamps();
         });
     }

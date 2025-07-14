@@ -14,7 +14,7 @@ class CreateLessonFilesTable extends Migration
     public function up()
     {
         Schema::create('lesson_files', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->integer('lesson_id');
             $table->integer('teacher_id');
             $table->string('part_number');

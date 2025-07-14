@@ -14,7 +14,7 @@ class CreateUserSignaturesTable extends Migration
     public function up()
     {
         Schema::create('user_signatures', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('file_path');
             $table->integer('user_id');
             $table->tinyInteger('status');
