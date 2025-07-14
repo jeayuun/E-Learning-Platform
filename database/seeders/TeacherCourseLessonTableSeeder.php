@@ -7,6 +7,8 @@ use App\Models\FileLesson;
 use App\Models\TeacherCourseLesson;
 use App\Models\User;
 use App\Models\VideoLesson;
+
+use App\Models\Teacher;
 use Illuminate\Database\Seeder;
 
 class TeacherCourseLessonTableSeeder extends Seeder
@@ -19,13 +21,16 @@ class TeacherCourseLessonTableSeeder extends Seeder
     public function run()
     {
         $model = TeacherCourseLesson::first();
-        if (empty($model)) {
-            $teacher1 = User::where('email','teacher@mail.com')->first();
-            $teacher2 = User::where('email','teacher2@mail.com')->first();
+        $courses = Course::all();
+        $teacher = Teacher::all();
 
-            $course1 = Course::where('title','Algorithms & Data Structures')->first();
-            $course2 = Course::where('title','Programming in the Large')->first();
-            $course3 = Course::where('title','Discrete Mathematics')->first();
+        if (empty($model)) {
+            $teacher1 = User::where('email', 'teacher@mail.com')->first();
+            $teacher2 = User::where('email', 'teacher2@mail.com')->first();
+
+            $course1 = Course::where('title', 'Algorithms & Data Structures')->first();
+            $course2 = Course::where('title', 'Programming in the Large')->first();
+            $course3 = Course::where('title', 'Discrete Mathematics')->first();
             $data = [
                 [
                     'course_id' => $course1->id,
@@ -34,8 +39,6 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'title' => 'asymptotic notations',
                     'description' => null,
                     'tags' => null,
-                    'created_at' => now(),
-                    'updated_at' => now(),
                 ],
                 [
                     'course_id' => $course1->id,
@@ -44,8 +47,6 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'title' => 'Time complexity Analysis of iterative programs',
                     'description' => null,
                     'tags' => null,
-                    'created_at' => now(),
-                    'updated_at' => now(),
                 ],
                 [
                     'course_id' => $course1->id,
@@ -54,8 +55,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'title' => 'comparing various functions to analyse time complexity',
                     'description' => null,
                     'tags' => null,
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'course_id' => $course2->id,
@@ -64,8 +64,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'title' => 'C Introduction',
                     'description' => null,
                     'tags' => null,
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'course_id' => $course2->id,
@@ -74,8 +73,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'title' => 'How Computer Programs Work',
                     'description' => null,
                     'tags' => null,
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'course_id' => $course1->id,
@@ -84,8 +82,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'title' => 'Lesson one',
                     'description' => null,
                     'tags' => null,
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'course_id' => $course1->id,
@@ -94,17 +91,17 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'title' => 'Lesson two',
                     'description' => null,
                     'tags' => null,
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
             ];
-            TeacherCourseLesson::insert($data);
 
-            $teacherCourseLesson1 = TeacherCourseLesson::where('title','asymptotic notations')->first();
-            $teacherCourseLesson2 = TeacherCourseLesson::where('title','Time complexity Analysis of iterative programs')->first();
-            $teacherCourseLesson3 = TeacherCourseLesson::where('title','comparing various functions to analyse time complexity')->first();
-            $teacherCourseLesson4 = TeacherCourseLesson::where('title','C Introduction')->first();
-            $teacherCourseLesson5 = TeacherCourseLesson::where('title','How Computer Programs Work')->first();
+            TeacherCourseLesson::insert(values: $data);
+
+            $teacherCourseLesson1 = TeacherCourseLesson::where('title', 'asymptotic notations')->first();
+            $teacherCourseLesson2 = TeacherCourseLesson::where('title', 'Time complexity Analysis of iterative programs')->first();
+            $teacherCourseLesson3 = TeacherCourseLesson::where('title', 'comparing various functions to analyse time complexity')->first();
+            $teacherCourseLesson4 = TeacherCourseLesson::where('title', 'C Introduction')->first();
+            $teacherCourseLesson5 = TeacherCourseLesson::where('title', 'How Computer Programs Work')->first();
 
             $dataForVideoSource = [
                 [
@@ -144,8 +141,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'video_title' => 'C Programming Tutorial - 1 - Introduction',
                     'description' => null,
                     'video_embed_url' => 'https://www.youtube.com/embed/2NWeucMKrLI',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'lesson_id' => $teacherCourseLesson4->id,
@@ -154,8 +150,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'video_title' => 'C Programming Tutorial - 2 - Setting Up Code Blocks',
                     'description' => null,
                     'video_embed_url' => 'https://www.youtube.com/embed/3DeLiClDd04',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'lesson_id' => $teacherCourseLesson5->id,
@@ -164,8 +159,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'video_title' => 'C Programming Tutorial - 3 - How Computer Programs Work',
                     'description' => null,
                     'video_embed_url' => 'https://www.youtube.com/embed/iWx3yyFMWQA',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
             ];
             VideoLesson::insert($dataForVideoSource);
@@ -178,8 +172,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'file_title' => 'Asymptotic Growth of Functions',
                     'description' => null,
                     'file_url' => 'https://classes.soe.ucsc.edu/cmps102/Spring04/TantaloAsymp.pdf',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'lesson_id' => $teacherCourseLesson2->id,
@@ -188,8 +181,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'file_title' => 'Algorithms: analysis, complexity',
                     'description' => null,
                     'file_url' => 'https://ocw.mit.edu/courses/civil-and-environmental-engineering/1-204-computer-algorithms-in-systems-engineering-spring-2010/lecture-notes/MIT1_204S10_lec05.pdf',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'lesson_id' => $teacherCourseLesson3->id,
@@ -198,8 +190,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'file_title' => 'comparing various functions to analyse time complexity',
                     'description' => null,
                     'file_url' => 'https://www.cs.duke.edu/courses/summer10/cps130/files/L2-Analysis.pdf',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'lesson_id' => $teacherCourseLesson4->id,
@@ -208,8 +199,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'file_title' => 'C Programming Introduction',
                     'description' => null,
                     'file_url' => 'https://www.tutorialspoint.com/cprogramming/cprogramming_tutorial.pdf',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'lesson_id' => $teacherCourseLesson4->id,
@@ -218,8 +208,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'file_title' => 'C Programming Setting Up Code Blocks',
                     'description' => null,
                     'file_url' => 'http://www.codeblocks.org/docs/manual_en.pdf',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
                 [
                     'lesson_id' => $teacherCourseLesson5->id,
@@ -228,8 +217,7 @@ class TeacherCourseLessonTableSeeder extends Seeder
                     'file_title' => 'C Programming How Computer Programs Work',
                     'description' => null,
                     'file_url' => 'https://www.tutorialspoint.com/computer_programming/computer_programming_tutorial.pdf',
-                    'created_at' => now(),
-                    'updated_at' => now(),
+
                 ],
             ];
             FileLesson::insert($dataForFilesSource);
