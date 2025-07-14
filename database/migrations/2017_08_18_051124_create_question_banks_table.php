@@ -17,8 +17,8 @@ class CreateQuestionBanksTable extends Migration
             $table->id();
             $table->string('question_title');
             $table->tinyInteger('question_type');
-            $table->integer('course_id');
-            $table->integer('teacher_id');
+            $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
             $table->text('question_body');
             $table->timestamps();
         });

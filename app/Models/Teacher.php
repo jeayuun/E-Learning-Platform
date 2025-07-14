@@ -18,4 +18,9 @@ class Teacher extends Model
     {
         return $this->belongsTo(UserSignature::class, 'user_id', 'user_id');
     }
+
+    public function courses()
+    {
+        return $this->hasMany(TeacherCourse::class, 'teacher_courses');
+    }
 }

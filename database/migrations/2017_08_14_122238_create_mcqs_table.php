@@ -15,7 +15,7 @@ class CreateMcqsTable extends Migration
     {
         Schema::create('mcqs', function (Blueprint $table) {
             $table->id();
-            $table->integer('lesson_id');
+            $table->foreignId('lesson_id')->constrained('teacher_course_lessons')->onDelete('cascade');
             $table->string('part_number');
             $table->text('question');
             $table->text('option_1');

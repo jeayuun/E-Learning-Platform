@@ -15,8 +15,8 @@ class CreateExamSubmissionsTable extends Migration
     {
         Schema::create('exam_submissions', function (Blueprint $table) {
             $table->id();
-            $table->integer('exam_id');
-            $table->integer('student_id');
+            $table->foreignId('exam_id')->constrained('exams')->onDelete('cascade');
+            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
             $table->integer('answer_file_id');
             $table->double('total_mark', 5, 3)->default(0.00);
             $table->double('achieve_mark', 5, 3)->default(0.00);

@@ -15,10 +15,10 @@ class CourseTableSeeder extends Seeder
     {
         $model = \App\Models\Course::first();
         if (empty($model)) {
-            $department1 = \App\Models\Department::where('title','Department of Architecture')->first();
-            $department2 = \App\Models\Department::where('title','Department of History of Art')->first();
-            $department3 = \App\Models\Department::where('title','Computer Science')->first();
-            $department4 = \App\Models\Department::where('title','Civil engineering')->first();
+            $department1 = \App\Models\Department::where('title', 'Department of Architecture')->first();
+            $department2 = \App\Models\Department::where('title', 'Department of History of Art')->first();
+            $department3 = \App\Models\Department::where('title', 'Computer Science')->first();
+            $department4 = \App\Models\Department::where('title', 'Civil engineering')->first();
             $data = [
                 [
                     'department_id' => $department3->id,
@@ -68,7 +68,7 @@ class CourseTableSeeder extends Seeder
                     'department_id' => $department3->id,
                     'title' => 'Algorithms & Data Structures',
                     'featured_image' => '/admin/images/courses/course_5.jpg',
-                    'short_code' => 'COMP 016',
+                    'short_code' => 'COMP 018',
                     'featured_text' => 'Data structures & types, mapping of abstract information structures into representations on primary & secondary storage. Analysis of time & space complexity of algorithms. Sequences. Lists. Stacks. Queues. Sets, multisets, tables. Trees. Sorting. Hash tables. Priority queues. Graphs. String algorithms.',
                     'default_cost' => null,
                     'status' => \App\Libraries\Enumerations\CourseStatus::$APPROVED,

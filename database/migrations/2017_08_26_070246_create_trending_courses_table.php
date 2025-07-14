@@ -15,7 +15,7 @@ class CreateTrendingCoursesTable extends Migration
     {
         Schema::create('trending_courses', function (Blueprint $table) {
             $table->id();
-            $table->integer('teacher_course_id')->unique();
+            $table->foreignId('teacher_course_id')->constrained('teacher_courses')->onDelete('cascade');
             $table->timestamps();
         });
     }

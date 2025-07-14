@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Course;
 use App\Models\TeacherCourse;
 use App\Models\User;
+use App\Models\Teacher;
 use Illuminate\Database\Seeder;
 
 class TeacherCourseTableSeeder extends Seeder
@@ -16,41 +17,16 @@ class TeacherCourseTableSeeder extends Seeder
      */
     public function run()
     {
-        $model = TeacherCourse::first();
-        if (empty($model)) {
-            $teacher1 = User::where('email','teacher@mail.com')->first();
-            $teacher2 = User::where('email','teacher2@mail.com')->first();
+        $teachers = Teacher::all(); // Get all teachers
+        $courses = Course::all();   // Get all courses
 
-            $course1 = Course::where('title','Algorithms & Data Structures')->first();
-            $course2 = Course::where('title','Programming in the Large')->first();
-            $course3 = Course::where('title','Discrete Mathematics')->first();
-            $data = [
-                [
-                    'course_id' => $course1->id,
-                    'teacher_id' => $teacher1->id,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ],
-                [
-                    'course_id' => $course2->id,
-                    'teacher_id' => $teacher1->id,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ],
-                [
-                    'course_id' => $course3->id,
-                    'teacher_id' => $teacher1->id,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ],
-                [
-                    'course_id' => $course1->id,
-                    'teacher_id' => $teacher2->id,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ],
-            ];
-            TeacherCourse::insert($data);
+        foreach ($courses as $course) {
+            $randomTeacher = $teachers->random(); // Pick a random teacher for each course
+
+            TeacherCourse::create([
+                'course_id' => $course->id,
+                'teacher_id' => $randomTeacher->id,
+            ]);
         }
     }
 }

@@ -15,7 +15,7 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->integer('department_id');
+            $table->foreignId('department_id')->constrained('departments')->onDelete('cascade');
             $table->string('title')->unique();
             $table->string('featured_image')->default('admin/images/course.jpg');
             $table->string('short_code')->nullable()->unique();
