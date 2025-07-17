@@ -17,10 +17,10 @@ class CreateLessonFilesTable extends Migration
             $table->id();
             $table->foreignId('lesson_id')->constrained('teacher_course_lessons')->onDelete('cascade');
             $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
-            $table->string('part_number');
-            $table->string('file_title');
+            $table->string('part_number')->nullable();
+            $table->string('file_title')->nullable();
             $table->text('description')->nullable();
-            $table->string('file_url');
+            $table->string('file_url')->nullable();
             $table->timestamps();
         });
     }

@@ -17,8 +17,8 @@ class CreateTeacherCourseLessonsTable extends Migration
             $table->id();
             $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
             $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
-            $table->integer('number');
-            $table->string('title');
+            $table->integer('lesson_number')->nullable();
+            $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('tags')->nullable();
             $table->timestamps();

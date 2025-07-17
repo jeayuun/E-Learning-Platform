@@ -17,10 +17,10 @@ class CreateLessonVideosTable extends Migration
             $table->id();
             $table->foreignId('lesson_id')->constrained('teacher_course_lessons')->onDelete('cascade');
             $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
-            $table->string('part_number');
-            $table->string('video_title');
+            $table->string('part_number')->nullable();
+            $table->string('video_title')->nullable();
             $table->text('description')->nullable();
-            $table->text('video_embed_url');
+            $table->text('video_embed_url')->nullable();
             $table->timestamps();
         });
     }

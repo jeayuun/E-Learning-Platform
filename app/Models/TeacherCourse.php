@@ -19,9 +19,9 @@ class TeacherCourse extends Model
         return $this->hasMany(Teacher::class, 'teacher_courses');
     }
 
-    public function Student()
+    public function teacherCourseStudent()
     {
-        return $this->hasMany(StudentCourse::class, 'teacher_courses');
+        return $this->hasMany(StudentCourse::class, 'teacher_course_id');
     }
 
 
