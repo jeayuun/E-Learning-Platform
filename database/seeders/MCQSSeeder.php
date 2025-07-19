@@ -31,7 +31,7 @@ class MCQSSeeder extends Seeder
                 'option_4' => 'Insert Question 4',
                 'right_answer' => null,
                 'description' => null,
-                'default_mark' => 2.00,
+
             ]);
         }
     }

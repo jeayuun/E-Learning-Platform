@@ -21,8 +21,14 @@ class QuestionsSeeder extends Seeder
         $teacherCourses = TeacherCourseLesson::all();
         $teachers = Teacher::all();
 
-        foreach ($teachers as $teacher) {
+        foreach ($teacherCourses as $teacherCourse) {
+            $model = Question::create([
+                'lesson_id' => $teacherCourse->id,
+                'part_number' => 'Add Question Part Number Here',
+                'question' => 'Please add a Question Here',
+                'description' => 'Add a Description Here',
 
+            ]);
         }
     }
 }

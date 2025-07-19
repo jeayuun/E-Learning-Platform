@@ -16,8 +16,8 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('lesson_id')->constrained('teacher_course_lessons')->onDelete('cascade');
-            $table->string('part_number');
-            $table->text('question');
+            $table->string('part_number')->nullable();
+            $table->text('question')->nullable();
             $table->text('description')->nullable();
             $table->double('default_mark', 5, 3)->default(0.00);
             $table->timestamps();

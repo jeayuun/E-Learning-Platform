@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TeacherCourseLessonTableSeeder::class);
         $this->call(LessonFilesSeeder::class);
         $this->call(LessonVideosSeeder::class);
-        //$this->call(QuestionsSeeder::class);
+        $this->call(QuestionsSeeder::class);
         $this->call(MCQSSeeder::class);
     }
 }
