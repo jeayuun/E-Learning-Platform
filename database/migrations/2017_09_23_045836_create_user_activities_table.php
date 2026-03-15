@@ -14,7 +14,7 @@ class CreateUserActivitiesTable extends Migration
     public function up()
     {
         Schema::create('user_activities', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->integer('total_teacher_login')->default(0);
             $table->integer('total_student_login')->default(0);
             $table->timestamps();

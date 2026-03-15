@@ -14,12 +14,12 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('lesson_id');
-            $table->string('part_number');
-            $table->text('question');
+            $table->id();
+            $table->foreignId('lesson_id')->constrained('teacher_course_lessons')->onDelete('cascade');
+            $table->string('part_number')->nullable();
+            $table->text('question')->nullable();
             $table->text('description')->nullable();
-            $table->double('default_mark',5,3)->default(0.00);
+            $table->double('default_mark', 5, 3)->default(0.00);
             $table->timestamps();
         });
     }

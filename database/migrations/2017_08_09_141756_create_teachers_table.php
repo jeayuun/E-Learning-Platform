@@ -14,8 +14,8 @@ class CreateTeachersTable extends Migration
     public function up()
     {
         Schema::create('teachers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
+            $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('country_code')->nullable();
             $table->string('iso')->nullable();
             $table->integer('phone')->nullable();

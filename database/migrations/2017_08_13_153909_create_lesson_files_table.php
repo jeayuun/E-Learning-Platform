@@ -14,13 +14,13 @@ class CreateLessonFilesTable extends Migration
     public function up()
     {
         Schema::create('lesson_files', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('lesson_id');
-            $table->integer('teacher_id');
-            $table->string('part_number');
-            $table->string('file_title');
+            $table->id();
+            $table->foreignId('lesson_id')->constrained('teacher_course_lessons')->onDelete('cascade');
+            $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
+            $table->string('part_number')->nullable();
+            $table->string('file_title')->nullable();
             $table->text('description')->nullable();
-            $table->string('file_url');
+            $table->string('file_url')->nullable();
             $table->timestamps();
         });
     }

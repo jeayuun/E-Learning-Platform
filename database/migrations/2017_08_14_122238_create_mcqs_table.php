@@ -14,17 +14,17 @@ class CreateMcqsTable extends Migration
     public function up()
     {
         Schema::create('mcqs', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('lesson_id');
-            $table->string('part_number');
-            $table->text('question');
-            $table->text('option_1');
-            $table->text('option_2');
+            $table->id();
+            $table->foreignId('lesson_id')->constrained('teacher_course_lessons')->onDelete('cascade');
+            $table->string('part_number')->nullable();
+            $table->text('question')->nullable();
+            $table->text('option_1')->nullable();
+            $table->text('option_2')->nullable();
             $table->text('option_3')->nullable();
             $table->text('option_4')->nullable();
-            $table->tinyInteger('right_answer');
+            $table->tinyInteger('right_answer')->nullable();
             $table->text('description')->nullable();
-            $table->double('default_mark',5,3)->default(0.00);
+            $table->double('default_mark', 5, 3)->default(0.00);
             $table->timestamps();
         });
     }

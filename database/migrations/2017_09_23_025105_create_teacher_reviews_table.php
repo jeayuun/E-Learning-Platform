@@ -14,9 +14,9 @@ class CreateTeacherReviewsTable extends Migration
     public function up()
     {
         Schema::create('teacher_reviews', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('student_id');
-            $table->integer('teacher_id');
+            $table->id();
+            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+            $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
             $table->tinyInteger('point');
             $table->timestamps();
         });

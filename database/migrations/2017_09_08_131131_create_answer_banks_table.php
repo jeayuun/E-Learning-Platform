@@ -14,9 +14,9 @@ class CreateAnswerBanksTable extends Migration
     public function up()
     {
         Schema::create('answer_banks', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->tinyInteger('question_type');
-            $table->integer('teacher_course_id');
+            $table->foreignId('teacher_course_id')->constrained('teacher_courses')->onDelete('cascade');
             $table->text('question_answer_body');
             $table->timestamps();
         });

@@ -11,7 +11,7 @@ use App\Models\VideoLesson;
 
 use Illuminate\Database\Seeder;
 
-class TeacherCourseLessonTableSeeder extends Seeder
+class LessonFilesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,19 +22,20 @@ class TeacherCourseLessonTableSeeder extends Seeder
     {
 
 
-        $courses = Course::all();
+        $teachercourses = TeacherCourseLesson::all();
         $teachers = Teacher::all();
 
-        foreach ($courses as $course) {
+        foreach ($teachercourses as $teachercourse) {
             $number = 1;
+            $stringnum = "File - " . $number;
             foreach ($teachers as $teacher) {
-                $model = TeacherCourseLesson::create([
-                    'course_id' => $course->id,
+                $model = FileLesson::create([
+                    'lesson_id' => $teachercourse->id,
                     'teacher_id' => $teacher->id,
-                    'lesson_number' => $number++,
-                    'title' => null,
+                    'part_number' => $stringnum++,
+                    'file_title' => null,
                     'description' => null,
-                    'tags' => null,
+                    'file_url' => null,
                 ]);
             }
         }

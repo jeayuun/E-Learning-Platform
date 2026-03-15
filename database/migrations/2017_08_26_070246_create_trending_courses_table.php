@@ -14,8 +14,8 @@ class CreateTrendingCoursesTable extends Migration
     public function up()
     {
         Schema::create('trending_courses', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('teacher_course_id')->unique();
+            $table->id();
+            $table->foreignId('teacher_course_id')->constrained('teacher_courses')->onDelete('cascade');
             $table->timestamps();
         });
     }

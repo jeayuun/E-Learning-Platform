@@ -14,10 +14,10 @@ class CreateCourseStudentTable extends Migration
     public function up()
     {
         Schema::create('course_student', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('student_id');
-            $table->integer('teacher_course_id');
-            $table->unique(['student_id','teacher_course_id']);
+            $table->id();
+            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+            $table->foreignId('teacher_course_id')->constrained('teacher_courses')->onDelete('cascade');
+            $table->unique(['student_id', 'teacher_course_id']);
             $table->tinyInteger('status')->default(\App\Libraries\Enumerations\CourseStudentStatus::$INCOMPLETE);
             $table->timestamps();
         });

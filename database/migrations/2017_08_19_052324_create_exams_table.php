@@ -14,13 +14,13 @@ class CreateExamsTable extends Migration
     public function up()
     {
         Schema::create('exams', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('exam_title');
-            $table->integer('course_id');
-            $table->integer('teacher_id');
+            $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
             $table->integer('question_file_id');
             $table->text('syllabus')->nullable();
-            $table->double('passing_score',5,2);
+            $table->double('passing_score', 5, 2);
             $table->time('duration')->nullable();
             $table->tinyInteger('status');
             $table->timestamps();

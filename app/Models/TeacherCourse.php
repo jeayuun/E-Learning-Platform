@@ -13,15 +13,17 @@ class TeacherCourse extends Model
     {
         return $this->belongsTo(Course::class);
     }
-    
+
     public function teacher()
     {
-        return $this->belongsTo(Teacher::class,'teacher_id','user_id');
+        return $this->hasMany(Teacher::class, 'teacher_courses');
     }
 
     public function teacherCourseStudent()
     {
-        return $this->hasMany(StudentCourse::class,'teacher_course_id');
+        return $this->hasMany(StudentCourse::class, 'teacher_course_id');
     }
-    
+
+
+
 }

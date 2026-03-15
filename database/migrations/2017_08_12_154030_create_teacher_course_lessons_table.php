@@ -14,11 +14,11 @@ class CreateTeacherCourseLessonsTable extends Migration
     public function up()
     {
         Schema::create('teacher_course_lessons', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('course_id');
-            $table->integer('teacher_id');
-            $table->integer('number');
-            $table->string('title');
+            $table->id();
+            $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
+            $table->integer('lesson_number')->nullable();
+            $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('tags')->nullable();
             $table->timestamps();
